@@ -34,15 +34,15 @@ const PATHS = {
 
 
 const SECTION_CONFIG = [
-  { folder: DAILY_ROOT, title: "Daily Journal", icon: "sun", color: "#d3ad59", description: "Your days, moments, reflections, and daily rhythm.", dashboard: PATHS.daily, processor: "time-garden-section-overview" },
-  { folder: WEEKLY_ROOT, title: "Weekly Planning", icon: "calendar-range", color: "#65a8dc", description: "Plan your weeks, review priorities, and see the bigger picture.", dashboard: PATHS.weekly, processor: "time-garden-section-overview" },
-  { folder: "07 Notes", title: "Knowledge Library", icon: "notebook", color: "#55aaa3", description: "Capture, connect, and revisit what you learn.", dashboard: PATHS.knowledge, processor: "time-garden-section-overview" },
-  { folder: "08 Courses", title: "Courses", icon: "graduation-cap", color: "#65a8dc", description: "Your courses, personal topics, and continuous learning.", dashboard: PATHS.courses, processor: "time-garden-courses-overview" },
-  { folder: "09 Books", title: "Books Library", icon: "book-open", color: "#55aa83", description: "Organize your library and follow your reading progress.", dashboard: PATHS.books, processor: "time-garden-books-overview" },
-  { folder: "10 Quran", title: "Quran Journey", icon: "book-heart", color: "#55aa83", description: "Memorization, reading, revision, and your daily wird.", dashboard: PATHS.quran, processor: "time-garden-quran-overview" },
-  { folder: "11 Languages", title: "Language Studio", icon: "languages", color: "#a78bd2", description: "Your personal language academy and CEFR learning paths.", dashboard: PATHS.languages, processor: "time-garden-languages-overview" },
-  { folder: "12 Goals", title: "Goals & Milestones", icon: "target", color: "#d3ad59", description: "Set meaningful goals, build your own milestones, and track progress.", dashboard: PATHS.goals, processor: "lifora-goals" },
-  { folder: "13 Daily Planner", title: "Daily Planner", icon: "calendar-check", color: "#d3ad59", description: "Plan your day, schedule course topics and reading sessions, and keep every task connected to its source.", dashboard: PATHS.planner, processor: "time-garden-section-overview" }
+  { folder: DAILY_ROOT, title: "Daily Journal", icon: "sun", color: "#d3ad59", description: "Your days, moments, reflections, and daily rhythm.", dashboard: PATHS.daily, processor: "time-garden-section-overview", banner: "06 Templates/Images/Weekly Notes/WeeklyBanner1.gif" },
+  { folder: WEEKLY_ROOT, title: "Weekly Planning", icon: "calendar-range", color: "#65a8dc", description: "Plan your weeks, review priorities, and see the bigger picture.", dashboard: PATHS.weekly, processor: "time-garden-section-overview", banner: "06 Templates/Images/Weekly Notes/WeeklyBanner2.gif" },
+  { folder: "07 Notes", title: "Knowledge Library", icon: "notebook", color: "#55aaa3", description: "Capture, connect, and revisit what you learn.", dashboard: PATHS.knowledge, processor: "time-garden-section-overview", banner: "06 Templates/Images/Weekly Notes/WeeklyBanner1.gif" },
+  { folder: "08 Courses", title: "Courses", icon: "graduation-cap", color: "#65a8dc", description: "Your courses, personal topics, and continuous learning.", dashboard: PATHS.courses, processor: "time-garden-courses-overview", banner: "06 Templates/Images/Weekly Notes/WeeklyBanner2.gif" },
+  { folder: "09 Books", title: "Books Library", icon: "book-open", color: "#55aa83", description: "Organize your library and follow your reading progress.", dashboard: PATHS.books, processor: "time-garden-books-overview", banner: "06 Templates/Images/Monthly Notes/MonthlyBanner2.gif" },
+  { folder: "10 Quran", title: "Quran Journey", icon: "book-heart", color: "#55aa83", description: "Memorization, reading, revision, and your daily wird.", dashboard: PATHS.quran, processor: "time-garden-quran-overview", banner: "06 Templates/Images/Quarterly Notes/QuarterlyBanner1.gif" },
+  { folder: "11 Languages", title: "Language Studio", icon: "languages", color: "#a78bd2", description: "Your personal language academy and CEFR learning paths.", dashboard: PATHS.languages, processor: "time-garden-languages-overview", banner: "06 Templates/Images/Quarterly Notes/QuarterlyBanner3.gif" },
+  { folder: "12 Goals", title: "Goals & Milestones", icon: "target", color: "#d3ad59", description: "Set meaningful goals, build your own milestones, and track progress.", dashboard: PATHS.goals, processor: "lifora-goals", banner: "06 Templates/Images/Weekly Notes/WeeklyBanner4.gif" },
+  { folder: "13 Daily Planner", title: "Daily Planner", icon: "calendar-check", color: "#d3ad59", description: "Plan your day, schedule course topics and reading sessions, and keep every task connected to its source.", dashboard: PATHS.planner, processor: "time-garden-section-overview", banner: "06 Templates/Images/Monthly Notes/MonthlyBanner4.gif" }
 ];
 
 const HOME_SECTION_CONFIG = [
@@ -7074,6 +7074,14 @@ module.exports = class TimeGardenNavigator extends Plugin {
       const source = this.resolveBannerSource(frontmatter.banner, file.path);
       if (source) return { ...source, frontmatter, file };
     }
+
+    if (sectionPath) {
+      const config = SECTION_CONFIG.find(item => item.folder === sectionPath);
+      if (config?.banner) {
+        const source = this.resolveBannerSource(config.banner, config.dashboard);
+        if (source) return { ...source, frontmatter: {}, file: source.file };
+      }
+    }
     return null;
   }
 
@@ -7220,25 +7228,30 @@ module.exports = class TimeGardenNavigator extends Plugin {
     header.style.setProperty("background-repeat", "no-repeat", "important");
 
     const content = header.createDiv({ cls: "tg-global-day-header-content" });
-    const context = content.createDiv({ cls: "tg-global-day-header-context" });
-    this.createLiforaSymbol(context, "tg-lifora-context-symbol");
-    const contextLabel = context.createSpan({ cls: "tg-global-day-header-context-label" });
-    contextLabel.setText(sectionTitle ? `LIFORA  /  ${sectionTitle.toUpperCase()}` : "LIFORA");
 
-    const title = content.createDiv({ cls: "tg-global-day-header-title" });
+    if (sectionPath) {
+      content.style.display = "none";
+    } else {
+      const context = content.createDiv({ cls: "tg-global-day-header-context" });
+      this.createLiforaSymbol(context, "tg-lifora-context-symbol");
+      const contextLabel = context.createSpan({ cls: "tg-global-day-header-context-label" });
+      contextLabel.setText("LIFORA");
+
+      const title = content.createDiv({ cls: "tg-global-day-header-title" });
     const mark = title.createSpan({ cls: "tg-global-day-header-mark tg-premium-svg-icon" });
     setIcon(mark, "sparkles");
     if (!mark.querySelector("svg")) setIcon(mark, "calendar-days");
-    title.createSpan({
-      cls: "tg-global-day-header-date",
-      text: date.toLocaleDateString("en-US", {
-        weekday: "long",
-        month: "long",
-        day: "2-digit",
-        year: "numeric"
-      })
-    });
-    header.setAttribute("aria-label", `LIFORA ${sectionTitle || "home"} daily identity: ${dateKey}`);
+      title.createSpan({
+        cls: "tg-global-day-header-date",
+        text: date.toLocaleDateString("en-US", {
+          weekday: "long",
+          month: "long",
+          day: "2-digit",
+          year: "numeric"
+        })
+      });
+    }
+    header.setAttribute("aria-label", sectionPath ? `${sectionTitle || "LIFORA"} section banner` : `LIFORA home daily identity: ${dateKey}`);
   }
 
   renderGlobalDailyHeader(parent, sectionPath = "", bannerSourcePath = "") {
