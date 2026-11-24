@@ -30,12 +30,56 @@ LIFORA does not include third-party plugin source code. Install community plugin
 
 ## Installation
 
+### Linux and Ubuntu
+
+If Git and Obsidian are not installed, run:
+
+```bash
+sudo apt update
+sudo apt install -y git snapd
+sudo snap install obsidian --classic
+```
+
+Then clone the template and open it in Obsidian:
+
+```bash
+mkdir -p "$HOME/Documents/Obsidian"
+cd "$HOME/Documents/Obsidian"
+git clone https://github.com/BN-Nasser/LIFORA-Obsidian-Template.git
+cd LIFORA-Obsidian-Template
+obsidian .
+```
+
+In Obsidian:
+
+1. Select **Open folder as vault** if the folder does not open automatically.
+2. Open **Settings → Community plugins** and enable community plugins.
+3. Enable the plugins requested by the vault.
+4. Open **Settings → Appearance → CSS snippets** and enable the included snippets.
+5. Run **Reload app without saving** from the Command Palette.
+6. Open `00 Dashboard/LIFORA Home.md`.
+
+To update an existing copy later:
+
+```bash
+cd "$HOME/Documents/Obsidian/LIFORA-Obsidian-Template"
+git pull --ff-only
+```
+
+For a quick terminal-only launch:
+
+```bash
+obsidian "$HOME/Documents/Obsidian/LIFORA-Obsidian-Template"
+```
+
+### Windows
+
 1. Download or clone this repository.
 2. Open the repository folder as a new Obsidian vault.
 3. Open **Settings → Community plugins** and enable the plugins requested by the vault.
 4. Enable the included CSS snippets in **Settings → Appearance → CSS snippets**.
-5. Run **Reload app without saving** from the command palette.
-6. Open **LIFORA Home** from the `00 Dashboard` folder.
+5. Run **Reload app without saving** from the Command Palette.
+6. Open `00 Dashboard/LIFORA Home.md`.
 
 For Windows, the repository includes `LIFORA Plugins Setup.cmd` and `Tools/LIFORA-Install-Plugins.ps1`. Review scripts before running them and install only the plugins you want.
 
