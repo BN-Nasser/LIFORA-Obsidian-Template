@@ -1,0 +1,9 @@
+{
+  "id": "time-garden-navigator",
+  "name": "LIFORA Workspace Navigator",
+  "version": "2.10.8",
+  "minAppVersion": "1.5.0",
+  "description": "Automatic install of missing Excalidraw, Advanced Canvas, TaskNotes and Editing Toolbar at startup; preserves existing plugins and data.",
+  "author": "LIFORA",
+  "isDesktopOnly": false
+}

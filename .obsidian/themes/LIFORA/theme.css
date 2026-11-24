@@ -1,0 +1,403 @@
+/*
+LIFORA — Premium Obsidian Theme
+Brand: YOUR LIFE. IN FLOW.
+Palette: Obsidian Charcoal / Champagne Gold / Lavender / Sage
+*/
+
+.theme-dark {
+  color-scheme: dark;
+
+  --background-primary: #15161B;
+  --background-primary-alt: #191A20;
+  --background-secondary: #1D1F26;
+  --background-secondary-alt: #242630;
+  --background-modifier-border: rgba(226, 215, 190, .12);
+  --background-modifier-border-hover: rgba(197, 166, 106, .34);
+  --background-modifier-hover: rgba(197, 166, 106, .075);
+  --background-modifier-active-hover: rgba(197, 166, 106, .13);
+  --background-modifier-form-field: #1A1C23;
+  --background-modifier-box-shadow: rgba(0, 0, 0, .28);
+  --background-modifier-success: rgba(111, 182, 156, .15);
+  --background-modifier-error: rgba(211, 117, 117, .14);
+  --background-modifier-cover: rgba(10, 11, 15, .72);
+
+  --text-normal: #E9E6DF;
+  --text-muted: #B5B1A8;
+  --text-faint: #858179;
+  --text-on-accent: #17171A;
+  --text-accent: #D4B77E;
+  --text-accent-hover: #F0D8A5;
+
+  --interactive-normal: #282A33;
+  --interactive-hover: #333641;
+  --interactive-accent: #C5A66A;
+  --interactive-accent-hover: #D9BB82;
+  --interactive-accent-rgb: 197, 166, 106;
+
+  --color-accent: #C5A66A;
+  --color-accent-1: #D9BB82;
+  --color-accent-2: #A9874D;
+  --color-red: #D98585;
+  --color-orange: #D8A36F;
+  --color-yellow: #D8BD7D;
+  --color-green: #79B99D;
+  --color-cyan: #72B8B8;
+  --color-blue: #78A9D2;
+  --color-purple: #A88DCE;
+  --color-pink: #CE91B0;
+
+  --link-color: #D8BB82;
+  --link-color-hover: #F0D8A5;
+  --link-external-color: #C5A66A;
+  --link-external-color-hover: #E7D3A5;
+
+  --tag-background: rgba(197, 166, 106, .12);
+  --tag-background-hover: rgba(197, 166, 106, .2);
+  --tag-color: #D7BD8D;
+  --tag-color-hover: #F1DDB4;
+
+  --blockquote-border-color: rgba(197, 166, 106, .62);
+  --hr-color: rgba(226, 215, 190, .15);
+  --table-border-color: rgba(226, 215, 190, .13);
+  --table-header-background: #20222A;
+  --table-row-alt-background: rgba(255, 255, 255, .018);
+
+  --code-background: #1C1E26;
+  --code-normal: #E2DED5;
+  --code-comment: #8C928D;
+  --code-function: #D9BB82;
+  --code-keyword: #B39ADB;
+  --code-string: #8FC5A8;
+  --code-property: #8DB8D8;
+  --code-operator: #C9C5BB;
+  --code-punctuation: #A9A59D;
+  --code-value: #D8A77E;
+  --code-tag: #D98F9B;
+  --code-attribute: #D9BB82;
+  --code-constant: #B39ADB;
+  --code-class: #82BDB5;
+  --code-type: #8DB8D8;
+  --code-variable: #E1C98E;
+
+  --font-interface-theme: Inter, "Segoe UI", sans-serif;
+  --font-text-theme: Inter, "Segoe UI", sans-serif;
+  --font-monospace-theme: "JetBrains Mono", "Cascadia Code", Consolas, monospace;
+
+  --radius-s: 7px;
+  --radius-m: 11px;
+  --radius-l: 16px;
+  --radius-xl: 22px;
+
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb-bg: rgba(197, 166, 106, .22);
+  --scrollbar-active-thumb-bg: rgba(197, 166, 106, .4);
+
+  --titlebar-background: #131419;
+  --titlebar-background-focused: #131419;
+  --titlebar-text-color: #A9A59C;
+  --tab-container-background: #131419;
+  --tab-background-active: #20222A;
+  --tab-text-color: #929087;
+  --tab-text-color-active: #F0EBDD;
+  --tab-outline-color: rgba(197, 166, 106, .22);
+
+  --ribbon-background: #17181E;
+  --side-dock-background: #191A20;
+  --status-bar-background: #17181E;
+}
+
+/* Application chrome */
+.theme-dark .workspace,
+.theme-dark .workspace-split,
+.theme-dark .workspace-leaf,
+.theme-dark .workspace-leaf-content {
+  background-color: var(--background-primary);
+}
+
+.theme-dark .titlebar,
+.theme-dark .workspace-tab-header-container,
+.theme-dark .workspace-ribbon,
+.theme-dark .side-dock-ribbon {
+  background-color: #131419;
+}
+
+.theme-dark .workspace-tab-header {
+  border-radius: 10px 10px 0 0;
+  transition: background .18s ease, color .18s ease;
+}
+
+.theme-dark .workspace-tab-header.is-active {
+  background: #20222A;
+  box-shadow: inset 0 2px 0 rgba(197, 166, 106, .9);
+}
+
+.theme-dark .workspace-tab-header:hover:not(.is-active) {
+  background: rgba(197, 166, 106, .06);
+}
+
+.theme-dark .workspace-divider,
+.theme-dark .workspace-leaf-resize-handle {
+  background-color: rgba(226, 215, 190, .1);
+}
+
+/* Navigation tree */
+.theme-dark .nav-folder-title,
+.theme-dark .nav-file-title {
+  border-radius: 8px;
+  transition: background .16s ease, color .16s ease;
+}
+
+.theme-dark .nav-folder-title:hover,
+.theme-dark .nav-file-title:hover {
+  background: rgba(197, 166, 106, .075);
+}
+
+.theme-dark .nav-folder-title.is-active,
+.theme-dark .nav-file-title.is-active {
+  color: #E9D8B4;
+  background: rgba(197, 166, 106, .13);
+}
+
+.theme-dark .nav-folder-title .nav-folder-title-content,
+.theme-dark .nav-file-title .nav-file-title-content {
+  font-weight: 560;
+}
+
+/* Interactive controls */
+.theme-dark button,
+.theme-dark .clickable-icon,
+.theme-dark .nav-action-button {
+  transition: color .16s ease, background .16s ease, border-color .16s ease, transform .16s ease;
+}
+
+.theme-dark .clickable-icon:hover,
+.theme-dark .nav-action-button:hover {
+  color: #E5C98F;
+  background: rgba(197, 166, 106, .1);
+}
+
+.theme-dark input,
+.theme-dark textarea,
+.theme-dark select,
+.theme-dark .dropdown {
+  border-color: rgba(226, 215, 190, .16);
+  border-radius: 9px;
+  background-color: #191B22;
+}
+
+.theme-dark input:focus,
+.theme-dark textarea:focus,
+.theme-dark select:focus {
+  border-color: rgba(197, 166, 106, .7);
+  box-shadow: 0 0 0 3px rgba(197, 166, 106, .1);
+}
+
+/* Modals, menus, and command palette */
+.theme-dark .modal,
+.theme-dark .prompt,
+.theme-dark .menu,
+.theme-dark .suggestion-container {
+  border: 1px solid rgba(226, 215, 190, .14);
+  border-radius: 16px;
+  background: #1D1F26;
+  box-shadow: 0 22px 65px rgba(0, 0, 0, .42);
+}
+
+.theme-dark .menu-item:hover,
+.theme-dark .suggestion-item.is-selected {
+  background: rgba(197, 166, 106, .12);
+}
+
+/* Editor and rendered notes */
+.theme-dark .markdown-preview-view,
+.theme-dark .markdown-source-view,
+.theme-dark .cm-editor {
+  color: var(--text-normal);
+}
+
+.theme-dark .markdown-rendered h1,
+.theme-dark .markdown-rendered h2,
+.theme-dark .markdown-rendered h3,
+.theme-dark .markdown-rendered h4,
+.theme-dark .cm-header {
+  color: #EEE9DF;
+  letter-spacing: -.018em;
+}
+
+.theme-dark .markdown-rendered h1,
+.theme-dark .markdown-rendered h2 {
+  font-weight: 740;
+}
+
+.theme-dark .markdown-rendered a,
+.theme-dark .cm-link {
+  text-decoration-color: rgba(197, 166, 106, .4);
+  text-underline-offset: 3px;
+}
+
+.theme-dark .markdown-rendered blockquote {
+  border-left-color: rgba(197, 166, 106, .65);
+  background: rgba(197, 166, 106, .045);
+  border-radius: 0 10px 10px 0;
+}
+
+.theme-dark .markdown-rendered table th {
+  color: #E8D8B6;
+  background: #20222A;
+}
+
+.theme-dark .markdown-rendered table td,
+.theme-dark .markdown-rendered table th {
+  border-color: rgba(226, 215, 190, .13);
+}
+
+.theme-dark .cm-activeLine,
+.theme-dark .cm-active {
+  background: rgba(197, 166, 106, .025);
+}
+
+.theme-dark .cm-selectionBackground,
+.theme-dark .cm-editor ::selection {
+  background: rgba(197, 166, 106, .22) !important;
+}
+
+/* Status bar and scrollbars */
+.theme-dark .status-bar {
+  border-top: 1px solid rgba(197, 166, 106, .12);
+  background: #17181E;
+}
+
+.theme-dark ::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: rgba(197, 166, 106, .24);
+  background-clip: padding-box;
+}
+
+/* LIFORA-specific UI integration */
+.theme-dark .tg-lifora-signature {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  min-width: 0;
+  margin: -2px 0 22px;
+  padding: 2px 2px 17px;
+  border-bottom: 1px solid rgba(197, 166, 106, .2);
+}
+
+.theme-dark .tg-lifora-signature-mark {
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(197, 166, 106, .34);
+  border-radius: 14px;
+  background: linear-gradient(145deg, rgba(197, 166, 106, .16), rgba(197, 166, 106, .035));
+  box-shadow: 0 0 24px rgba(197, 166, 106, .08), inset 0 1px rgba(255,255,255,.06);
+}
+
+.theme-dark .tg-lifora-signature-symbol {
+  width: 31px;
+  height: 31px;
+  filter: drop-shadow(0 0 7px rgba(197, 166, 106, .25));
+}
+
+.theme-dark .tg-lifora-signature-identity {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.theme-dark .tg-lifora-wordmark {
+  color: #F0EBDD;
+  font-size: 1.16rem;
+  font-weight: 850;
+  letter-spacing: .24em;
+  line-height: 1.1;
+}
+
+.theme-dark .tg-lifora-subline {
+  color: #AFA99D;
+  font-size: .61rem;
+  font-weight: 720;
+  letter-spacing: .14em;
+}
+
+.theme-dark .tg-lifora-signature-tagline {
+  margin-left: auto;
+  color: #C5A66A;
+  font-size: .69rem;
+  font-weight: 780;
+  letter-spacing: .15em;
+  white-space: nowrap;
+}
+
+.theme-dark .tg-global-day-header-context {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  color: #F1E8D6;
+  font-size: .74rem;
+  font-weight: 800;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 12px rgba(0,0,0,.42);
+}
+
+.theme-dark .tg-lifora-context-symbol {
+  width: 25px;
+  height: 25px;
+  filter: drop-shadow(0 0 8px rgba(197, 166, 106, .38));
+}
+
+.theme-dark .tg-global-day-header-context-label {
+  color: #F1E8D6;
+}
+
+.theme-dark .tg-lifora-home-ribbon {
+  color: #D9BB82 !important;
+}
+
+.theme-dark .tg-lifora-ribbon-symbol {
+  width: 21px;
+  height: 21px;
+  filter: drop-shadow(0 0 5px rgba(197, 166, 106, .38));
+}
+
+.theme-dark .tg-lifora-signature,
+.theme-dark .tg-global-day-header-context {
+  user-select: none;
+}
+
+@media (max-width: 700px) {
+  .theme-dark .tg-lifora-signature {
+    gap: 10px;
+    margin-bottom: 17px;
+  }
+  .theme-dark .tg-lifora-signature-mark {
+    flex-basis: 39px;
+    width: 39px;
+    height: 39px;
+  }
+  .theme-dark .tg-lifora-signature-tagline {
+    display: none;
+  }
+  .theme-dark .tg-lifora-subline {
+    font-size: .54rem;
+    letter-spacing: .1em;
+  }
+}
+
+
+/* LIFORA v2.6.0 ribbon declutter: hide Bases and the reset-welcome shortcut only. */
+.workspace-ribbon .side-dock-ribbon-action[aria-label*="Create new base"],
+.workspace-ribbon .side-dock-ribbon-action[title*="Create new base"],
+.workspace-ribbon .side-dock-ribbon-action[aria-label*="Reset Welcome Experience"],
+.workspace-ribbon .side-dock-ribbon-action[title*="Reset Welcome Experience"],
+.workspace-ribbon button[aria-label*="Reset Welcome Experience"] {
+  display: none !important;
+}

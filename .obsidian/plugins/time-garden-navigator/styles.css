@@ -1,0 +1,2847 @@
+/* Keep the two LIFORA navigation controls easy to find at the top of the ribbon. */
+.time-garden-home-ribbon {
+  order: -1000 !important;
+  color: var(--text-accent);
+}
+
+.time-garden-hub-ribbon {
+  order: -999 !important;
+  color: var(--text-accent);
+}
+
+
+/* =====================================================================
+   LIFORA v1.5.3 — FULL-WIDTH DASHBOARD LAYOUT
+   Loaded automatically by the plugin; no CSS Snippet activation needed.
+   ===================================================================== */
+
+/* Expand only markdown views that contain a LIFORA daily header. */
+.markdown-source-view.mod-cm6.tg-dashboard-wide-view .cm-contentContainer,
+.markdown-source-view.mod-cm6.tg-dashboard-wide-view .cm-sizer,
+.markdown-source-view.mod-cm6.tg-dashboard-wide-view .cm-content,
+.markdown-preview-view.tg-dashboard-wide-view .markdown-preview-sizer {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.markdown-source-view.mod-cm6.tg-dashboard-wide-view .cm-contentContainer,
+.markdown-preview-view.tg-dashboard-wide-view .markdown-preview-sizer {
+  margin-inline: 0 !important;
+}
+
+.markdown-source-view.mod-cm6.tg-dashboard-wide-view .cm-embed-block,
+.markdown-source-view.mod-cm6.tg-dashboard-wide-view .cm-preview-code-block,
+.markdown-preview-view.tg-dashboard-wide-view .block-language-time-garden-home-overview,
+.markdown-preview-view.tg-dashboard-wide-view .block-language-time-garden-section-overview,
+.markdown-preview-view.tg-dashboard-wide-view .block-language-time-garden-courses-overview,
+.markdown-preview-view.tg-dashboard-wide-view .block-language-time-garden-books-overview,
+.markdown-preview-view.tg-dashboard-wide-view .block-language-time-garden-quran-overview,
+.markdown-preview-view.tg-dashboard-wide-view .block-language-time-garden-languages-overview {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* Hide the generated markdown title in both Live Preview and Reading view. */
+.markdown-source-view.mod-cm6.tg-dashboard-wide-view .cm-line:has(.cm-header-1),
+.markdown-preview-view.tg-dashboard-wide-view .markdown-preview-sizer > h1:first-child {
+  display: none !important;
+}
+
+/* Main dashboard containers use the full available pane width. */
+.tg-home-app,
+.tg-section-dashboard,
+.tg-courses-app,
+.tg-books-app,
+.tg-quran-app,
+.tg-languages-app,
+.tg-course-panel,
+.tg-book-panel,
+.tg-language-panel {
+  width: 100% !important;
+  max-width: none !important;
+  margin-inline: 0 !important;
+  box-sizing: border-box;
+}
+
+/* The daily identity is a wide banner at the top, not a centered narrow card. */
+.tg-global-day-header {
+  width: 100% !important;
+  min-height: clamp(175px, 16vw, 225px) !important;
+  max-height: 225px !important;
+  margin: 0 0 20px !important;
+  padding: 26px clamp(20px, 3vw, 46px) !important;
+  border-radius: 24px !important;
+  box-sizing: border-box;
+}
+
+.tg-global-day-header-content {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.tg-global-day-header-title {
+  font-size: clamp(1.65rem, 2.8vw, 2.7rem) !important;
+}
+
+/* One date only: the global banner owns the date; do not repeat it in Home. */
+.tg-home-date { display: none !important; }
+
+/* Welcome panel is secondary to the daily banner and uses a calmer footprint. */
+.tg-home-hero {
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 178px !important;
+  padding: 26px 32px !important;
+  margin: 0 0 18px !important;
+  box-sizing: border-box;
+}
+
+.tg-home-hero-copy {
+  max-width: min(76%, 900px) !important;
+}
+
+.tg-home-hero h1 {
+  font-size: clamp(1.65em, 2.7vw, 2.45em) !important;
+  line-height: 1.14 !important;
+  margin: 7px 0 8px !important;
+}
+
+.tg-home-hero p {
+  max-width: 760px !important;
+  margin: 0 !important;
+}
+
+.tg-home-hero-actions {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 8px !important;
+}
+
+/* Keep premium SVG icon glow consistent in all sections and ribbon controls. */
+.tg-premium-svg-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 6px color-mix(in srgb, currentColor 68%, transparent))
+          drop-shadow(0 0 15px color-mix(in srgb, currentColor 25%, transparent));
+}
+
+.tg-premium-svg-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke-width: 2.1px;
+}
+
+@media (max-width: 760px) {
+  .tg-global-day-header {
+    min-height: 165px !important;
+    max-height: 190px !important;
+    padding: 20px !important;
+  }
+  .tg-home-hero {
+    min-height: 0 !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 18px;
+    padding: 22px !important;
+  }
+  .tg-home-hero-copy { max-width: 100% !important; }
+  .tg-home-hero-actions { justify-content: flex-start !important; }
+}
+
+
+/* Writing Studio v1.5.1 — custom text, folders, templates, callouts and code */
+.tg-editor-modal-description {
+  color: var(--text-muted);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.tg-folder-color-row {
+  display: grid;
+  grid-template-columns: minmax(130px, 1fr) 22px 48px;
+  align-items: center;
+  gap: 10px;
+  margin: 13px 0;
+}
+
+.tg-folder-color-row label {
+  color: var(--text-normal);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.tg-folder-color-row input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  min-height: 16px;
+  justify-self: center;
+}
+
+.tg-folder-color-row input[type="color"] {
+  width: 46px;
+  height: 34px;
+  min-height: 34px;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.tg-folder-color-preview {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  margin-top: 18px;
+  padding: 10px 14px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 10px;
+  font-weight: 650;
+}
+
+.tg-folder-has-custom-appearance > .nav-folder-title {
+  transition: background-color .15s ease, color .15s ease;
+}
+
+.tg-template-picker-modal {
+  width: min(680px, calc(100vw - 48px));
+}
+
+.tg-template-select {
+  width: 100%;
+  min-height: 40px;
+  margin: 8px 0 12px;
+}
+
+.tg-template-preview {
+  max-height: 310px;
+  overflow: auto;
+  margin: 0;
+  padding: 14px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 10px;
+  background: var(--background-secondary);
+  color: var(--text-normal);
+  font-family: var(--font-monospace);
+  font-size: 11px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.tg-template-actions {
+  align-items: center;
+}
+
+.tg-text-style-preview {
+  display: inline-flex;
+  align-items: center;
+  min-height: 58px;
+  padding: 12px 16px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 10px;
+  background: var(--background-secondary);
+  color: var(--text-normal);
+  font-weight: 650;
+}
+
+.tg-code-block-modal {
+  width: min(720px, calc(100vw - 48px));
+}
+
+.tg-code-block-modal textarea {
+  min-height: 220px;
+  font-family: var(--font-monospace);
+  font-size: 12px;
+  line-height: 1.55;
+  tab-size: 4;
+  white-space: pre;
+}
+
+.tg-editor-modal textarea {
+  resize: vertical;
+}
+
+.markdown-rendered pre {
+  overflow: auto;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 11px;
+  background: var(--code-background);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, .08);
+}
+
+.markdown-rendered pre > code {
+  display: block;
+  padding: 15px 17px;
+  font-size: .9em;
+  line-height: 1.65;
+  tab-size: 4;
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
+  font-family: var(--font-monospace);
+  font-size: .92em;
+  line-height: 1.65;
+}
+
+/* Color-coded title boxes: inserted as native Obsidian callouts. */
+.callout[data-callout^="tg-box-"] {
+  border: 1px solid rgba(var(--callout-color), .35);
+  border-radius: 12px;
+  background: rgba(var(--callout-color), .075);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .06);
+  overflow: hidden;
+}
+
+.callout[data-callout^="tg-box-"] > .callout-title {
+  padding: 11px 14px;
+  background: rgba(var(--callout-color), .15);
+  font-weight: 750;
+}
+
+.callout[data-callout^="tg-box-"] > .callout-content {
+  padding: 12px 15px;
+}
+
+.callout[data-callout="tg-box-blue"] { --callout-color: 76, 145, 220; --callout-icon: lucide-square; }
+.callout[data-callout="tg-box-purple"] { --callout-color: 153, 115, 218; --callout-icon: lucide-sparkles; }
+.callout[data-callout="tg-box-green"] { --callout-color: 66, 166, 125; --callout-icon: lucide-check-circle; }
+.callout[data-callout="tg-box-gold"] { --callout-color: 196, 157, 70; --callout-icon: lucide-star; }
+.callout[data-callout="tg-box-orange"] { --callout-color: 225, 139, 66; --callout-icon: lucide-flame; }
+.callout[data-callout="tg-box-pink"] { --callout-color: 214, 112, 157; --callout-icon: lucide-heart; }
+.callout[data-callout="tg-box-red"] { --callout-color: 208, 83, 83; --callout-icon: lucide-alert-circle; }
+
+@media (max-width: 700px) {
+  .tg-folder-color-row {
+    grid-template-columns: minmax(110px, 1fr) 22px 44px;
+    gap: 7px;
+  }
+  .tg-template-actions {
+    justify-content: stretch;
+  }
+  .tg-template-actions button {
+    flex: 1 1 auto;
+  }
+}
+
+
+/* Daily-note headings use SVG mask icons, not emoji glyphs. */
+.tg-inline-svg-icon {
+  display: inline-block !important;
+  width: 1em !important;
+  height: 1em !important;
+  margin-inline-end: .32em !important;
+  vertical-align: -.12em !important;
+  background-color: currentColor !important;
+  filter: drop-shadow(0 0 4px color-mix(in srgb, currentColor 52%, transparent));
+  -webkit-mask-repeat: no-repeat !important;
+  mask-repeat: no-repeat !important;
+  -webkit-mask-position: center !important;
+  mask-position: center !important;
+  -webkit-mask-size: contain !important;
+  mask-size: contain !important;
+}
+.tg-icon-sparkles {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m12 3 1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2L12 3Z'/%3E%3Cpath d='m19 14 1 2.5 2.5 1-2.5 1L19 21l-1-2.5-2.5-1 2.5-1 1-2.5Z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m12 3 1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2L12 3Z'/%3E%3Cpath d='m19 14 1 2.5 2.5 1-2.5 1L19 21l-1-2.5-2.5-1 2.5-1 1-2.5Z'/%3E%3C/svg%3E");
+}
+.tg-icon-folder {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/%3E%3C/svg%3E");
+}
+.tg-icon-zap {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m13 2-3 8h7l-6 12 1-9H5l8-11Z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m13 2-3 8h7l-6 12 1-9H5l8-11Z'/%3E%3C/svg%3E");
+}
+.tg-icon-target {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Ccircle cx='12' cy='12' r='5'/%3E%3Ccircle cx='12' cy='12' r='1'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Ccircle cx='12' cy='12' r='5'/%3E%3Ccircle cx='12' cy='12' r='1'/%3E%3C/svg%3E");
+}
+.tg-icon-calendar {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='5' width='18' height='16' rx='2'/%3E%3Cpath d='M16 3v4M8 3v4M3 10h18'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='5' width='18' height='16' rx='2'/%3E%3Cpath d='M16 3v4M8 3v4M3 10h18'/%3E%3C/svg%3E");
+}
+.tg-icon-leaf {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 4c-8 0-14 4-14 11a5 5 0 0 0 5 5c7 0 11-6 9-16Z'/%3E%3Cpath d='M4 20c3-4 7-7 12-10'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 4c-8 0-14 4-14 11a5 5 0 0 0 5 5c7 0 11-6 9-16Z'/%3E%3Cpath d='M4 20c3-4 7-7 12-10'/%3E%3C/svg%3E");
+}
+
+
+/* Dashboard canvas: override Obsidian's editor and preview reading-column width. */
+.timegarden-dashboard div.inline-title,
+.timegarden-home div.inline-title,
+.timegarden-section-dashboard div.inline-title,
+.timegarden-folder-dashboard div.inline-title,
+.markdown-preview-view.tg-dashboard-wide-view .inline-title,
+.markdown-source-view.mod-cm6.tg-dashboard-wide-view .inline-title {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.tg-dashboard-wide-content,
+.tg-dashboard-wide-host,
+.tg-dashboard-wide-parent,
+.markdown-preview-view.tg-dashboard-wide-view .markdown-preview-sizer,
+.markdown-preview-view.tg-dashboard-wide-view .markdown-preview-section,
+.markdown-preview-view.tg-dashboard-wide-view .markdown-preview-sizer > *,
+.markdown-preview-view.tg-dashboard-wide-view .el-pre,
+.markdown-preview-view.tg-dashboard-wide-view .block-language-time-garden-home-overview,
+.markdown-preview-view.tg-dashboard-wide-view .block-language-time-garden-section-overview,
+.markdown-preview-view.tg-dashboard-wide-view .block-language-time-garden-courses-overview,
+.markdown-preview-view.tg-dashboard-wide-view .block-language-time-garden-books-overview,
+.markdown-preview-view.tg-dashboard-wide-view .block-language-time-garden-quran-overview,
+.markdown-preview-view.tg-dashboard-wide-view .block-language-time-garden-languages-overview {
+  width: 100% !important;
+  max-width: none !important;
+  margin-inline: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.markdown-source-view.mod-cm6.tg-dashboard-wide-view .cm-sizer,
+.markdown-source-view.mod-cm6.tg-dashboard-wide-view .cm-content,
+.markdown-source-view.mod-cm6.tg-dashboard-wide-view .cm-contentContainer,
+.markdown-source-view.mod-cm6.tg-dashboard-wide-view .cm-line,
+.markdown-source-view.mod-cm6.tg-dashboard-wide-view .cm-embed-block,
+.markdown-source-view.mod-cm6.tg-dashboard-wide-view .cm-preview-code-block,
+.markdown-source-view.mod-cm6.tg-dashboard-wide-view .cm-preview-code-block > *,
+.markdown-source-view.mod-cm6.tg-dashboard-wide-view .tg-dashboard-wide-content {
+  width: 100% !important;
+  max-width: none !important;
+  margin-inline: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.markdown-preview-view.tg-dashboard-wide-view .markdown-preview-sizer {
+  padding-inline: clamp(12px, 1.5vw, 26px) !important;
+}
+
+
+/* =====================================================================
+   LIFORA v1.5.5 — HARD FULL-WIDTH DASHBOARD FIX
+   ===================================================================== */
+
+/* Obsidian's readable-line-width setting is the source of the narrow centered column. */
+.markdown-preview-view:has(.tg-global-day-header),
+.markdown-reading-view:has(.tg-global-day-header),
+.markdown-source-view:has(.tg-global-day-header) {
+  --file-line-width: 100% !important;
+  --line-width: 100% !important;
+  --content-width: 100% !important;
+  max-width: none !important;
+  width: 100% !important;
+}
+
+.markdown-preview-view:has(.tg-global-day-header) .markdown-preview-sizer,
+.markdown-preview-view:has(.tg-global-day-header) .markdown-preview-section,
+.markdown-preview-view:has(.tg-global-day-header) .markdown-preview-sizer > div,
+.markdown-reading-view:has(.tg-global-day-header) .markdown-preview-sizer,
+.markdown-reading-view:has(.tg-global-day-header) .markdown-preview-section,
+.markdown-reading-view:has(.tg-global-day-header) .markdown-preview-sizer > div,
+.markdown-source-view:has(.tg-global-day-header) .cm-sizer,
+.markdown-source-view:has(.tg-global-day-header) .cm-contentContainer,
+.markdown-source-view:has(.tg-global-day-header) .cm-content,
+.markdown-source-view:has(.tg-global-day-header) .cm-embed-block,
+.markdown-source-view:has(.tg-global-day-header) .cm-preview-code-block {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin-inline: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.markdown-preview-view:has(.tg-global-day-header) .el-pre,
+.markdown-preview-view:has(.tg-global-day-header) .block-language-time-garden-home-overview,
+.markdown-preview-view:has(.tg-global-day-header) .block-language-time-garden-section-overview,
+.markdown-preview-view:has(.tg-global-day-header) .block-language-time-garden-courses-overview,
+.markdown-preview-view:has(.tg-global-day-header) .block-language-time-garden-books-overview,
+.markdown-preview-view:has(.tg-global-day-header) .block-language-time-garden-quran-overview,
+.markdown-preview-view:has(.tg-global-day-header) .block-language-time-garden-languages-overview,
+.markdown-reading-view:has(.tg-global-day-header) .el-pre,
+.markdown-reading-view:has(.tg-global-day-header) .block-language-time-garden-home-overview,
+.markdown-reading-view:has(.tg-global-day-header) .block-language-time-garden-section-overview,
+.markdown-reading-view:has(.tg-global-day-header) .block-language-time-garden-courses-overview,
+.markdown-reading-view:has(.tg-global-day-header) .block-language-time-garden-books-overview,
+.markdown-reading-view:has(.tg-global-day-header) .block-language-time-garden-quran-overview,
+.markdown-reading-view:has(.tg-global-day-header) .block-language-time-garden-languages-overview {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin-inline: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* The banner is a wide destination masthead, not a narrow date card. */
+.tg-global-day-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: clamp(230px, 19vw, 300px) !important;
+  max-height: 300px !important;
+  margin: 0 0 24px !important;
+  padding: clamp(24px, 3vw, 42px) !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+.tg-global-day-header-content {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+}
+
+.tg-global-day-header-title {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+  font-size: clamp(1.8rem, 3vw, 3rem) !important;
+  line-height: 1.1 !important;
+}
+
+.tg-global-day-header-date {
+  display: inline-block !important;
+  white-space: nowrap !important;
+  max-width: 100% !important;
+}
+
+/* The floating red Pixel Banner flag is a plugin shortcut, not part of the design.
+   Keep the shortcut available on ordinary notes, but hide it on LIFORA dashboards. */
+.markdown-preview-view:has(.tg-global-day-header) .select-image-icon,
+.markdown-reading-view:has(.tg-global-day-header) .select-image-icon,
+.markdown-source-view:has(.tg-global-day-header) .select-image-icon {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .tg-global-day-header {
+    min-height: 190px !important;
+    max-height: 230px !important;
+    padding: 20px !important;
+  }
+  .tg-global-day-header-title {
+    font-size: clamp(1.1rem, 3.5vw, 1.8rem) !important;
+    gap: 8px !important;
+  }
+}
+
+
+/* =====================================================================
+   LIFORA v1.5.6 — HOME REPLACEMENT + EDITOR / DASHBOARD SEPARATION
+   ===================================================================== */
+
+/* The dashboard is a rendered application, not a writing canvas. */
+.tg-system-dashboard-view .tg-editor-toolbar,
+.markdown-source-view:has(.tg-global-day-header) .tg-editor-toolbar {
+  display: none !important;
+}
+
+.tg-system-dashboard-view .cm-cursor,
+.tg-system-dashboard-view .cm-dropCursor,
+.markdown-source-view:has(.tg-global-day-header) .cm-cursor,
+.markdown-source-view:has(.tg-global-day-header) .cm-dropCursor {
+  display: none !important;
+  opacity: 0 !important;
+  border-left-color: transparent !important;
+}
+
+.tg-system-dashboard-view .cm-activeLine,
+.markdown-source-view:has(.tg-global-day-header) .cm-activeLine {
+  background: transparent !important;
+}
+
+/* Remove the large top and side padding around dashboard pages only. */
+.markdown-preview-view:has(.tg-global-day-header),
+.markdown-reading-view:has(.tg-global-day-header) {
+  --file-line-width: 100% !important;
+  --line-width: 100% !important;
+  --file-margins: 12px !important;
+  --content-width: 100% !important;
+  width: 100% !important;
+  max-width: none !important;
+  padding-top: 0 !important;
+}
+
+.markdown-preview-view:has(.tg-global-day-header) .markdown-preview-sizer,
+.markdown-reading-view:has(.tg-global-day-header) .markdown-preview-sizer {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 12px 32px !important;
+  box-sizing: border-box !important;
+}
+
+.markdown-preview-view:has(.tg-global-day-header) .markdown-preview-section,
+.markdown-reading-view:has(.tg-global-day-header) .markdown-preview-section {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding-top: 0 !important;
+}
+
+.markdown-preview-view:has(.tg-global-day-header) .el-pre,
+.markdown-reading-view:has(.tg-global-day-header) .el-pre,
+.markdown-preview-view:has(.tg-global-day-header) .block-language-time-garden-home-overview,
+.markdown-preview-view:has(.tg-global-day-header) .block-language-time-garden-section-overview,
+.markdown-preview-view:has(.tg-global-day-header) .block-language-time-garden-courses-overview,
+.markdown-preview-view:has(.tg-global-day-header) .block-language-time-garden-books-overview,
+.markdown-preview-view:has(.tg-global-day-header) .block-language-time-garden-quran-overview,
+.markdown-preview-view:has(.tg-global-day-header) .block-language-time-garden-languages-overview,
+.markdown-reading-view:has(.tg-global-day-header) .block-language-time-garden-home-overview,
+.markdown-reading-view:has(.tg-global-day-header) .block-language-time-garden-section-overview,
+.markdown-reading-view:has(.tg-global-day-header) .block-language-time-garden-courses-overview,
+.markdown-reading-view:has(.tg-global-day-header) .block-language-time-garden-books-overview,
+.markdown-reading-view:has(.tg-global-day-header) .block-language-time-garden-quran-overview,
+.markdown-reading-view:has(.tg-global-day-header) .block-language-time-garden-languages-overview {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Live Preview / Source mode: remove editor's built-in top gap and line-width cap. */
+.markdown-source-view:has(.tg-global-day-header) {
+  --file-line-width: 100% !important;
+  --line-width: 100% !important;
+  --file-margins: 12px !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.markdown-source-view:has(.tg-global-day-header) .cm-sizer,
+.markdown-source-view:has(.tg-global-day-header) .cm-contentContainer,
+.markdown-source-view:has(.tg-global-day-header) .cm-content {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding-top: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.markdown-source-view:has(.tg-global-day-header) .cm-contentContainer {
+  padding-inline: 12px !important;
+}
+
+.markdown-source-view:has(.tg-global-day-header) .cm-content {
+  padding-inline: 0 !important;
+}
+
+.markdown-source-view:has(.tg-global-day-header) .cm-line {
+  width: 100% !important;
+  max-width: none !important;
+  margin-inline: 0 !important;
+}
+
+.markdown-source-view:has(.tg-global-day-header) .cm-embed-block,
+.markdown-source-view:has(.tg-global-day-header) .cm-preview-code-block,
+.markdown-source-view:has(.tg-global-day-header) .cm-preview-code-block > * {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin-inline: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Full-width day banner, with a small intentional safe margin only. */
+.tg-global-day-header {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 0 20px !important;
+  border-radius: 22px !important;
+}
+
+.tg-global-day-header-content,
+.tg-global-day-header-title {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.timegarden-home .inline-title,
+.timegarden-dashboard .inline-title,
+.tg-system-dashboard-view .inline-title {
+  display: none !important;
+}
+
+@media (max-width: 760px) {
+  .markdown-preview-view:has(.tg-global-day-header) .markdown-preview-sizer,
+  .markdown-reading-view:has(.tg-global-day-header) .markdown-preview-sizer,
+  .markdown-source-view:has(.tg-global-day-header) .cm-contentContainer {
+    padding-inline: 8px !important;
+  }
+}
+
+
+/* =====================================================================
+   LIFORA v1.5.7 — SMART WORKSPACE EXPLORER
+   ===================================================================== */
+
+.tg-explorer-view {
+  --tg-explorer-accent: var(--interactive-accent);
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  min-height: calc(100vh - 76px);
+  box-sizing: border-box !important;
+  padding-bottom: 128px;
+}
+
+.tg-explorer-breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  min-height: 32px;
+  margin: 2px 0 20px;
+  color: var(--text-muted);
+  font-size: .78rem;
+}
+
+.tg-explorer-crumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  padding: 5px 8px;
+  border: 0;
+  border-radius: 8px;
+  color: var(--text-muted);
+  background: transparent;
+  cursor: pointer;
+  transition: background .16s ease, color .16s ease;
+}
+
+.tg-explorer-crumb:hover {
+  color: var(--text-normal);
+  background: var(--background-modifier-hover);
+}
+
+.tg-explorer-crumb.is-current {
+  color: var(--text-normal);
+  font-weight: 750;
+  cursor: default;
+}
+
+.tg-explorer-crumb-home {
+  width: 31px;
+  height: 31px;
+  justify-content: center;
+  padding: 0;
+  color: var(--interactive-accent);
+  background: color-mix(in srgb, var(--interactive-accent) 11%, var(--background-secondary));
+}
+
+.tg-explorer-crumb-home svg,
+.tg-explorer-breadcrumb-separator svg {
+  width: 15px;
+  height: 15px;
+}
+
+.tg-explorer-breadcrumb-separator {
+  display: inline-flex;
+  color: var(--text-faint);
+}
+
+.tg-explorer-heading {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  min-width: 0;
+  margin: 0 0 20px;
+  padding: 2px 0 8px;
+}
+
+.tg-explorer-heading-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 62px;
+  width: 62px;
+  height: 62px;
+  border: 1px solid color-mix(in srgb, var(--tg-explorer-accent) 36%, var(--background-modifier-border));
+  border-radius: 19px;
+  color: var(--tg-explorer-accent);
+  background: color-mix(in srgb, var(--tg-explorer-accent) 13%, var(--background-secondary));
+  box-shadow: 0 8px 26px color-mix(in srgb, var(--tg-explorer-accent) 10%, transparent);
+}
+
+.tg-explorer-heading-icon svg {
+  width: 29px;
+  height: 29px;
+  filter: drop-shadow(0 0 7px color-mix(in srgb, var(--tg-explorer-accent) 35%, transparent));
+}
+
+.tg-explorer-heading-copy {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.tg-explorer-eyebrow {
+  margin: 0 0 5px;
+  color: var(--tg-explorer-accent);
+  font-size: .68rem;
+  font-weight: 850;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.tg-explorer-heading-copy h2 {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  color: var(--text-normal);
+  font-size: clamp(1.55rem, 2.5vw, 2.15rem);
+  line-height: 1.15;
+}
+
+.tg-explorer-heading-copy p {
+  margin: 6px 0 0 !important;
+  color: var(--text-muted);
+  font-size: .86rem;
+}
+
+.tg-explorer-heading-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.tg-explorer-heading-actions .tg-course-btn,
+.tg-explorer-actions .tg-course-btn,
+.tg-explorer-empty-actions .tg-course-btn {
+  min-height: 37px;
+  font-size: .78rem;
+}
+
+.tg-explorer-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 11px;
+  margin: 0 0 20px;
+}
+
+.tg-explorer-stats .tg-home-stat {
+  min-height: 70px;
+  padding: 12px 14px;
+}
+
+.tg-explorer-stats .tg-home-stat-body span {
+  font-size: .62rem;
+}
+
+.tg-explorer-stats .tg-home-stat-body strong {
+  font-size: 1.15rem;
+}
+
+.tg-explorer-toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 0 0 12px;
+  padding: 11px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--background-secondary) 88%, transparent);
+  box-shadow: 0 8px 25px rgba(0,0,0,.07);
+}
+
+.tg-explorer-search-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1 1 220px;
+  min-width: 170px;
+}
+
+.tg-explorer-search-icon {
+  position: absolute;
+  left: 12px;
+  z-index: 1;
+  display: inline-flex;
+  color: var(--text-faint);
+  pointer-events: none;
+}
+
+.tg-explorer-search-icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.tg-explorer-search {
+  width: 100%;
+  min-height: 39px;
+  padding: 8px 12px 8px 38px !important;
+  border: 1px solid var(--background-modifier-border) !important;
+  border-radius: 10px !important;
+  color: var(--text-normal) !important;
+  background: var(--background-primary) !important;
+  box-shadow: none !important;
+}
+
+.tg-explorer-search:focus {
+  border-color: var(--interactive-accent) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--interactive-accent) 15%, transparent) !important;
+}
+
+.tg-explorer-sort {
+  flex: 0 0 170px;
+  min-height: 39px;
+  padding: 6px 30px 6px 10px !important;
+  border: 1px solid var(--background-modifier-border) !important;
+  border-radius: 10px !important;
+  color: var(--text-normal) !important;
+  background: var(--background-primary) !important;
+  font-size: .78rem;
+}
+
+.tg-explorer-view-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  min-height: 39px;
+  padding: 3px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 11px;
+  background: var(--background-primary);
+}
+
+.tg-explorer-view-button {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 31px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  color: var(--text-muted);
+  background: transparent;
+  cursor: pointer;
+}
+
+.tg-explorer-view-button svg {
+  width: 17px;
+  height: 17px;
+}
+
+.tg-explorer-view-button.is-active {
+  color: var(--text-on-accent);
+  background: var(--interactive-accent);
+  box-shadow: 0 3px 10px color-mix(in srgb, var(--interactive-accent) 28%, transparent);
+}
+
+.tg-explorer-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.tg-explorer-results-label {
+  min-height: 20px;
+  margin: 0 2px 14px;
+  color: var(--text-faint);
+  font-size: .72rem;
+}
+
+.tg-explorer-content-section {
+  margin: 0 0 25px;
+}
+
+.tg-explorer-content-section.is-hidden {
+  display: none !important;
+}
+
+.tg-explorer-section-header {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 12px;
+}
+
+.tg-explorer-section-header h3 {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  color: var(--text-normal);
+  font-size: 1.08rem;
+  font-weight: 800;
+}
+
+.tg-explorer-section-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  margin-inline-end: 1px;
+  border: 1px solid color-mix(in srgb, var(--interactive-accent) 28%, var(--background-modifier-border));
+  border-radius: 8px;
+  color: var(--interactive-accent);
+  background: color-mix(in srgb, var(--interactive-accent) 10%, var(--background-secondary));
+}
+
+.tg-explorer-section-icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.tg-explorer-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 23px;
+  height: 23px;
+  padding: 0 7px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 20px;
+  color: var(--text-muted);
+  background: var(--background-secondary);
+  font-size: .68rem;
+  font-weight: 750;
+}
+
+.tg-explorer-folder-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.tg-explorer-folder-card {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  min-width: 0;
+  min-height: 93px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--tg-explorer-folder-accent, #d3ad59) 22%, var(--background-modifier-border));
+  border-radius: 15px;
+  background: color-mix(in srgb, var(--tg-explorer-folder-background, var(--background-secondary)) 80%, var(--background-secondary));
+  box-shadow: 0 7px 20px rgba(0, 0, 0, .08), inset 0 1px 0 rgba(255, 255, 255, .035);
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+
+.tg-explorer-folder-card::before {
+  position: absolute;
+  inset: auto 0 0;
+  height: 3px;
+  content: "";
+  background: var(--tg-explorer-folder-accent, #d3ad59);
+  opacity: .8;
+}
+
+.tg-explorer-folder-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--tg-explorer-folder-accent, var(--interactive-accent));
+  box-shadow: 0 9px 22px color-mix(in srgb, var(--tg-explorer-folder-accent, var(--interactive-accent)) 12%, transparent);
+}
+
+.tg-explorer-folder-open {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  gap: 12px;
+  min-width: 0;
+  padding: 15px 13px;
+  border: 0;
+  color: var(--tg-explorer-folder-text, var(--text-normal));
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.tg-explorer-folder-icon,
+.tg-explorer-file-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 43px;
+  width: 43px;
+  height: 43px;
+  border: 1px solid color-mix(in srgb, var(--tg-explorer-folder-accent, var(--interactive-accent)) 24%, var(--background-modifier-border));
+  border-radius: 13px;
+  color: var(--tg-explorer-folder-accent, var(--interactive-accent));
+  background: color-mix(in srgb, var(--tg-explorer-folder-accent, var(--interactive-accent)) 12%, var(--background-primary));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .07), 0 5px 14px color-mix(in srgb, var(--tg-explorer-folder-accent, var(--interactive-accent)) 13%, transparent);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.tg-explorer-folder-open:hover .tg-explorer-folder-icon,
+.tg-explorer-file-card:hover .tg-explorer-file-icon,
+.tg-explorer-file-row:hover .tg-explorer-file-icon {
+  transform: translateY(-1px) scale(1.04);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1), 0 7px 18px color-mix(in srgb, var(--interactive-accent) 20%, transparent);
+}
+
+.tg-explorer-folder-icon svg,
+.tg-explorer-file-icon svg {
+  width: 22px;
+  height: 22px;
+  filter: drop-shadow(0 0 5px color-mix(in srgb, currentColor 22%, transparent));
+}
+
+.tg-explorer-item-copy {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.tg-explorer-item-copy strong {
+  overflow: hidden;
+  color: inherit;
+  font-size: .86rem;
+  font-weight: 780;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tg-explorer-item-copy span {
+  overflow: hidden;
+  color: var(--text-muted);
+  font-size: .7rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tg-explorer-item-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 25px;
+  color: var(--text-faint);
+}
+
+.tg-explorer-item-arrow svg {
+  width: 16px;
+  height: 16px;
+}
+
+.tg-explorer-item-menu {
+  display: grid;
+  place-items: center;
+  align-self: center;
+  flex: 0 0 31px;
+  width: 31px;
+  height: 31px;
+  margin-inline-end: 9px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  color: var(--text-muted);
+  background: transparent;
+  cursor: pointer;
+}
+
+.tg-explorer-item-menu:hover {
+  border-color: var(--background-modifier-border);
+  color: var(--interactive-accent);
+  background: var(--background-primary);
+}
+
+.tg-explorer-item-menu svg {
+  width: 16px;
+  height: 16px;
+}
+
+.tg-explorer-file-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.tg-explorer-file-card,
+.tg-explorer-file-row {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+  padding: 13px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 13px;
+  color: var(--text-normal);
+  background: var(--background-secondary);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .07), inset 0 1px 0 rgba(255, 255, 255, .035);
+  text-align: left;
+  cursor: pointer;
+  transition: transform .16s ease, border-color .16s ease, background .16s ease;
+}
+
+.tg-explorer-file-card {
+  min-height: 76px;
+}
+
+.tg-explorer-file-card:hover,
+.tg-explorer-file-row:hover {
+  transform: translateY(-1px);
+  border-color: var(--interactive-accent);
+  background: var(--background-secondary-alt);
+}
+
+.tg-explorer-file-icon {
+  flex-basis: 39px;
+  width: 39px;
+  height: 39px;
+  border-color: color-mix(in srgb, var(--interactive-accent) 22%, var(--background-modifier-border));
+  color: var(--interactive-accent);
+  background: color-mix(in srgb, var(--interactive-accent) 10%, var(--background-primary));
+}
+
+.tg-explorer-file-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.tg-explorer-file-row {
+  width: 100%;
+  min-height: 61px;
+  border-radius: 10px;
+}
+
+.tg-explorer-file-grid.is-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.tg-explorer-folder-grid.is-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.tg-explorer-folder-grid.is-list .tg-explorer-folder-card {
+  min-height: 63px;
+}
+
+.tg-explorer-folder-grid.is-list .tg-explorer-folder-open {
+  padding: 9px 12px;
+}
+
+.tg-explorer-folder-grid.is-list .tg-explorer-folder-icon {
+  flex-basis: 36px;
+  width: 36px;
+  height: 36px;
+}
+
+.tg-explorer-empty-inline {
+  padding: 17px 18px;
+  border: 1px dashed var(--background-modifier-border);
+  border-radius: 12px;
+  color: var(--text-muted);
+  background: color-mix(in srgb, var(--background-secondary) 55%, transparent);
+  font-size: .8rem;
+}
+
+.tg-explorer-empty-state,
+.tg-explorer-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 235px;
+  margin: 20px 0;
+  padding: 32px;
+  border: 1px dashed var(--background-modifier-border);
+  border-radius: 19px;
+  background: color-mix(in srgb, var(--background-secondary) 55%, transparent);
+  text-align: center;
+}
+
+.tg-explorer-empty-icon {
+  display: grid;
+  place-items: center;
+  width: 65px;
+  height: 65px;
+  margin-bottom: 3px;
+  border: 1px solid color-mix(in srgb, var(--interactive-accent) 30%, var(--background-modifier-border));
+  border-radius: 20px;
+  color: var(--interactive-accent);
+  background: color-mix(in srgb, var(--interactive-accent) 12%, var(--background-primary));
+}
+
+.tg-explorer-empty-icon svg {
+  width: 31px;
+  height: 31px;
+  filter: drop-shadow(0 0 7px color-mix(in srgb, var(--interactive-accent) 35%, transparent));
+}
+
+.tg-explorer-empty-state h3,
+.tg-explorer-error h3 {
+  margin: 0 !important;
+  border: 0 !important;
+  font-size: 1.15rem;
+}
+
+.tg-explorer-empty-state p,
+.tg-explorer-error p {
+  max-width: 520px;
+  margin: 0 !important;
+  color: var(--text-muted);
+  font-size: .82rem;
+}
+
+.tg-explorer-empty-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 7px;
+}
+
+.tg-explorer-error > svg {
+  width: 35px;
+  height: 35px;
+  color: var(--text-error);
+}
+
+.tg-explorer-create-modal .tg-explorer-modal-hint {
+  margin-top: 6px;
+  color: var(--text-faint);
+  font-size: .72rem;
+}
+
+@media (max-width: 1100px) {
+  .tg-explorer-folder-grid,
+  .tg-explorer-file-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .tg-explorer-heading {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .tg-explorer-heading-actions {
+    margin-inline-start: 78px;
+  }
+}
+
+@media (max-width: 700px) {
+  .tg-explorer-stats {
+    grid-template-columns: 1fr;
+  }
+  .tg-explorer-toolbar {
+    align-items: stretch;
+  }
+  .tg-explorer-search-wrap {
+    flex-basis: 100%;
+  }
+  .tg-explorer-sort {
+    flex: 1 1 140px;
+  }
+  .tg-explorer-folder-grid,
+  .tg-explorer-file-grid {
+    grid-template-columns: 1fr;
+  }
+  .tg-explorer-heading-icon {
+    flex-basis: 49px;
+    width: 49px;
+    height: 49px;
+    border-radius: 15px;
+  }
+  .tg-explorer-heading-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  .tg-explorer-heading-actions {
+    margin-inline-start: 0;
+  }
+}
+
+.tg-explorer-content-section.is-empty { display: none !important; }
+
+
+/* =====================================================================
+   LIFORA v1.5.8 — FLOATING CREATE ACTION
+   ===================================================================== */
+
+.tg-explorer-fab-host {
+  position: sticky;
+  inset-inline-end: auto;
+  bottom: max(24px, calc(var(--status-bar-height, 22px) + 12px));
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: max-content;
+  height: max-content;
+  margin-top: 20px;
+  margin-inline-start: auto;
+  direction: ltr;
+  pointer-events: none;
+}
+
+.tg-explorer-fab-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 58px;
+  height: 58px;
+  padding: 0 19px;
+  border: 1px solid color-mix(in srgb, var(--interactive-accent) 70%, white);
+  border-radius: 19px;
+  color: var(--text-on-accent, white);
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--interactive-accent) 84%, white),
+    var(--interactive-accent) 72%
+  );
+  box-shadow:
+    0 12px 30px color-mix(in srgb, var(--interactive-accent) 32%, transparent),
+    0 3px 8px rgba(0, 0, 0, .16),
+    inset 0 1px 0 rgba(255, 255, 255, .25);
+  cursor: pointer;
+  pointer-events: auto;
+  transition: transform .2s ease, box-shadow .2s ease, border-radius .2s ease;
+}
+
+.tg-explorer-fab-button:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 16px 34px color-mix(in srgb, var(--interactive-accent) 38%, transparent),
+    0 4px 10px rgba(0, 0, 0, .18),
+    inset 0 1px 0 rgba(255, 255, 255, .28);
+}
+
+.tg-explorer-fab-button:active {
+  transform: translateY(-1px) scale(.98);
+}
+
+.tg-explorer-fab-button:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--interactive-accent) 38%, transparent);
+  outline-offset: 4px;
+}
+
+.tg-explorer-fab-plus {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  border: 1px solid color-mix(in srgb, var(--text-on-accent, white) 36%, transparent);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--text-on-accent, white) 14%, transparent);
+  transition: transform .22s ease;
+}
+
+.tg-explorer-fab-plus svg {
+  width: 23px;
+  height: 23px;
+  stroke-width: 2.5;
+}
+
+.tg-explorer-fab-button.is-open .tg-explorer-fab-plus {
+  transform: rotate(45deg);
+}
+
+.tg-explorer-fab-label {
+  font-size: .84rem;
+  font-weight: 850;
+  letter-spacing: .01em;
+}
+
+.tg-explorer-fab-button .tg-explorer-fab-label::after {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin: 0 0 3px 7px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: .7;
+}
+
+.tg-explorer-fab-menu {
+  position: absolute;
+  inset-inline-end: 0;
+  bottom: calc(100% + 13px);
+  display: grid;
+  gap: 8px;
+  width: min(270px, calc(100vw - 36px));
+  padding: 9px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--background-secondary) 94%, transparent);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, .22);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  pointer-events: auto;
+  transform-origin: bottom right;
+  animation: tg-explorer-fab-rise .18s ease both;
+}
+
+.tg-explorer-fab-menu[hidden] {
+  display: none !important;
+}
+
+.tg-explorer-fab-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  min-height: 65px;
+  padding: 10px 11px;
+  border: 1px solid transparent;
+  border-radius: 13px;
+  color: var(--text-normal);
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: background .16s ease, border-color .16s ease, transform .16s ease;
+}
+
+.tg-explorer-fab-item:hover {
+  transform: translateY(-1px);
+  border-color: var(--background-modifier-border);
+  background: var(--background-primary);
+}
+
+.tg-explorer-fab-item-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  border: 1px solid color-mix(in srgb, var(--interactive-accent) 24%, var(--background-modifier-border));
+  border-radius: 13px;
+  color: var(--interactive-accent);
+  background: color-mix(in srgb, var(--interactive-accent) 12%, var(--background-primary));
+}
+
+.tg-explorer-fab-item.is-folder .tg-explorer-fab-item-icon {
+  color: #c99b43;
+  border-color: color-mix(in srgb, #c99b43 28%, var(--background-modifier-border));
+  background: color-mix(in srgb, #c99b43 12%, var(--background-primary));
+}
+
+.tg-explorer-fab-item.is-note .tg-explorer-fab-item-icon {
+  color: var(--interactive-accent);
+}
+
+.tg-explorer-fab-item-icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+.tg-explorer-fab-item-copy {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.tg-explorer-fab-item-copy strong {
+  color: var(--text-normal);
+  font-size: .83rem;
+  font-weight: 820;
+}
+
+.tg-explorer-fab-item-copy span {
+  color: var(--text-muted);
+  font-size: .7rem;
+}
+
+.tg-explorer-fab-item-arrow {
+  display: inline-flex;
+  color: var(--text-faint);
+}
+
+.tg-explorer-fab-item-arrow svg {
+  width: 15px;
+  height: 15px;
+}
+
+.tg-explorer-empty-hint {
+  margin: 0 !important;
+  color: var(--text-faint);
+  font-size: .75rem;
+}
+
+@keyframes tg-explorer-fab-rise {
+  from { opacity: 0; transform: translateY(7px) scale(.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 700px) {
+  .tg-explorer-fab-host {
+    inset-inline-end: auto;
+    bottom: max(36px, calc(var(--status-bar-height, 22px) + 15px));
+  }
+  .tg-explorer-fab-button {
+    height: 54px;
+    min-width: 54px;
+    padding: 0 16px;
+    border-radius: 17px;
+  }
+}
+
+
+/* =====================================================================
+   LIFORA v1.5.9 — CLEAN DASHBOARD & EXPLORER POLISH
+   ===================================================================== */
+
+/* Hide deprecated or noisy ribbon shortcuts for a cleaner premium UI */
+.workspace-ribbon .side-dock-ribbon-action[aria-label="LIFORA Hub"],
+.workspace-ribbon .side-dock-ribbon-action[aria-label="LIFORA Books"],
+.workspace-ribbon .side-dock-ribbon-action[aria-label="Quran Journey"],
+.workspace-ribbon .side-dock-ribbon-action[aria-label="Language Learning Studio"],
+.workspace-ribbon .side-dock-ribbon-action[aria-label="LIFORA Backup Center"],
+.workspace-ribbon .side-dock-ribbon-action[aria-label="🚩 Pixel Banner Menu"] {
+  display: none !important;
+}
+
+/* Cleaner generic folder explorer */
+.tg-explorer-heading {
+  gap: 0 !important;
+  justify-content: space-between;
+}
+.tg-explorer-heading-icon {
+  display: none !important;
+}
+.tg-explorer-heading-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.tg-explorer-heading-copy h2 {
+  font-size: clamp(1.8rem, 2.7vw, 2.4rem) !important;
+  letter-spacing: -0.02em;
+}
+.tg-explorer-heading-copy p {
+  max-width: 760px;
+  font-size: .92rem !important;
+}
+
+.tg-explorer-stats {
+  grid-template-columns: repeat(2, minmax(0, 220px)) !important;
+  gap: 14px !important;
+}
+
+.tg-explorer-folder-grid,
+.tg-explorer-file-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  gap: 14px !important;
+}
+
+.tg-explorer-folder-card,
+.tg-explorer-file-card,
+.tg-explorer-file-row {
+  border-radius: 18px !important;
+  box-shadow: 0 10px 24px rgba(0,0,0,.10);
+}
+
+.tg-explorer-folder-card {
+  min-height: 112px !important;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--tg-explorer-folder-background, var(--background-secondary)) 82%, var(--background-primary)) 0%, color-mix(in srgb, var(--tg-explorer-folder-background, var(--background-secondary)) 72%, var(--background-primary)) 100%) !important;
+}
+.tg-explorer-folder-card::before {
+  height: 4px !important;
+}
+
+.tg-explorer-folder-open,
+.tg-explorer-file-card,
+.tg-explorer-file-row {
+  padding: 18px !important;
+}
+
+.tg-explorer-folder-icon,
+.tg-explorer-file-icon,
+.tg-explorer-item-arrow,
+.tg-explorer-item-menu {
+  display: none !important;
+}
+
+.tg-explorer-item-copy {
+  gap: 7px !important;
+}
+.tg-explorer-item-copy .tg-explorer-item-kind {
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  padding: 4px 9px;
+  border: 1px solid color-mix(in srgb, var(--interactive-accent) 18%, var(--background-modifier-border));
+  border-radius: 999px;
+  color: var(--text-faint);
+  background: color-mix(in srgb, var(--background-primary) 80%, transparent);
+  font-size: .64rem;
+  font-weight: 800;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+.tg-explorer-item-copy strong {
+  font-size: 1.02rem !important;
+  white-space: normal !important;
+  line-height: 1.28;
+}
+.tg-explorer-item-copy span:last-child {
+  white-space: normal !important;
+  line-height: 1.35;
+  font-size: .76rem !important;
+}
+
+.tg-explorer-toolbar {
+  border-radius: 18px !important;
+  padding: 12px 13px !important;
+}
+
+.tg-explorer-results-label {
+  margin-top: 2px !important;
+  margin-bottom: 16px !important;
+}
+
+.tg-explorer-content-section {
+  margin-bottom: 28px !important;
+}
+
+.tg-explorer-section-header h3 {
+  font-size: 1.24rem !important;
+}
+
+.tg-explorer-empty-inline,
+.tg-explorer-empty-state {
+  border-radius: 16px !important;
+}
+
+@media (max-width: 700px) {
+  .tg-explorer-stats {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+/* LIFORA BRAND SYMBOL — fallback styling independent of the active theme */
+.tg-lifora-home-ribbon {
+  color: #D9BB82 !important;
+}
+.tg-lifora-ribbon-symbol {
+  display: block;
+  width: 21px;
+  height: 21px;
+  filter: drop-shadow(0 0 5px rgba(197, 166, 106, .38));
+}
+.tg-lifora-context-symbol {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+}
+
+
+
+/* LIFORA — Home floating Create action (the original Home layout stays unchanged). */
+.tg-home-fab-host {
+  z-index: 1105 !important;
+}
+.tg-home-fab-button {
+  min-width: 64px !important;
+  height: 62px !important;
+  border-radius: 20px !important;
+  padding-inline: 21px !important;
+}
+.tg-home-fab-menu {
+  max-height: min(72vh, 620px) !important;
+  overflow-y: auto !important;
+}
+.tg-home-recovery-hero {
+  min-height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 28px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #292336, #20252b 60%, #17191e);
+  border: 1px solid rgba(197,166,106,.3);
+}
+.tg-home-recovery-hero .tg-global-day-header-content {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+.tg-home-recovery-hero .tg-global-day-header-title {
+  color: #E9D9B8;
+}
+
+
+/* The Markdown safety fallback is removed from the rendered DOM only after a successful live render. */
+.tg-home-hard-recovery {
+  margin: 20px 0;
+  padding: 24px;
+  border: 1px solid rgba(197, 166, 106, .35);
+  border-radius: 18px;
+  background: var(--background-secondary);
+  color: var(--text-normal);
+}
+.tg-home-hard-recovery h1 { color: var(--text-accent); }
+
+
+/* LIFORA v2.5.0 — readable Markdown fallback if the live Home processor is unavailable. */
+.timegarden-home .callout[data-callout="lifora-home-fallback"] {
+  max-width: 980px;
+  margin: 22px auto;
+  padding: 18px 22px;
+  border: 1px solid rgba(197,166,106,.34);
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(197,166,106,.10), rgba(80,92,116,.12));
+  box-shadow: 0 12px 30px rgba(0,0,0,.12);
+}
+.timegarden-home .callout[data-callout="lifora-home-fallback"] .callout-title {
+  color: #D9BB82;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+.timegarden-home .callout[data-callout="lifora-home-fallback"] a {
+  color: var(--text-accent);
+  font-weight: 650;
+}
+
+
+/* LIFORA v2.6.0 — remove unwanted Obsidian / Cmdr ribbon shortcuts without disabling their features. */
+.workspace-ribbon .side-dock-ribbon-action[aria-label*="Create new base"],
+.workspace-ribbon .side-dock-ribbon-action[title*="Create new base"],
+.workspace-ribbon .side-dock-ribbon-action[aria-label*="Reset Welcome Experience"],
+.workspace-ribbon .side-dock-ribbon-action[title*="Reset Welcome Experience"],
+.workspace-ribbon button[aria-label*="Reset Welcome Experience"] {
+  display: none !important;
+}
+
+/* v2.8.3 — visible recovery surface for section navigation failures */
+.tg-section-recovery {
+  display: block !important;
+  width: min(100%, 1080px) !important;
+  min-height: 220px;
+  margin: 18px auto !important;
+  padding: clamp(24px, 4vw, 44px) !important;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 22px;
+  background: linear-gradient(145deg, var(--background-secondary), var(--background-primary));
+  color: var(--text-normal);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, .16);
+  box-sizing: border-box;
+}
+
+.tg-section-recovery h2 {
+  margin: 0 0 12px;
+  color: var(--text-normal);
+  font-size: clamp(1.35rem, 2.5vw, 2rem);
+  font-weight: 750;
+}
+
+.tg-section-recovery p {
+  max-width: 760px;
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+
+/* LIFORA v2.9.8 — Appearance Studio. CSS-only skins; no user-note rewriting. */
+.time-garden-theme-ribbon { order: -999 !important; color: var(--text-accent); }
+body[data-lifora-theme] { transition: background-color .18s ease, color .18s ease; }
+body[data-lifora-mode="light"] { color-scheme: light; }
+body[data-lifora-mode="dark"] { color-scheme: dark; }
+body[data-lifora-theme="ivory-atelier"] {
+  --background-primary: #F8F6F0;
+  --background-primary-alt: #EEE9E1;
+  --background-secondary: #EEE9E1;
+  --background-secondary-alt: #FFFFFF;
+  --background-modifier-border: color-mix(in srgb, #727783 28%, transparent);
+  --background-modifier-border-hover: color-mix(in srgb, #727783 46%, transparent);
+  --background-modifier-hover: color-mix(in srgb, #C09A55 10%, #EEE9E1);
+  --interactive-normal: #FFFFFF;
+  --interactive-hover: color-mix(in srgb, #C09A55 10%, #FFFFFF);
+  --interactive-accent: #C09A55;
+  --interactive-accent-hover: color-mix(in srgb, #C09A55 82%, #292D35);
+  --text-normal: #292D35;
+  --text-muted: #727783;
+  --text-faint: color-mix(in srgb, #727783 78%, #F8F6F0);
+  --text-accent: #C09A55;
+  --text-accent-hover: color-mix(in srgb, #C09A55 78%, #292D35);
+  --text-on-accent: #FFFFFF;
+  --tg-gold: #C09A55;
+  --tg-theme-accent: #C09A55;
+  --tg-card-bg: color-mix(in srgb, #FFFFFF 83%, #EEE9E1);
+  --tg-card-border: color-mix(in srgb, #727783 24%, transparent);
+}
+body[data-lifora-theme="champagne-silk"] {
+  --background-primary: #F8F1E7;
+  --background-primary-alt: #F0E5D5;
+  --background-secondary: #F0E5D5;
+  --background-secondary-alt: #FFF9F2;
+  --background-modifier-border: color-mix(in srgb, #786D67 28%, transparent);
+  --background-modifier-border-hover: color-mix(in srgb, #786D67 46%, transparent);
+  --background-modifier-hover: color-mix(in srgb, #B38455 10%, #F0E5D5);
+  --interactive-normal: #FFF9F2;
+  --interactive-hover: color-mix(in srgb, #B38455 10%, #FFF9F2);
+  --interactive-accent: #B38455;
+  --interactive-accent-hover: color-mix(in srgb, #B38455 82%, #352E2B);
+  --text-normal: #352E2B;
+  --text-muted: #786D67;
+  --text-faint: color-mix(in srgb, #786D67 78%, #F8F1E7);
+  --text-accent: #B38455;
+  --text-accent-hover: color-mix(in srgb, #B38455 78%, #352E2B);
+  --text-on-accent: #FFFFFF;
+  --tg-gold: #B38455;
+  --tg-theme-accent: #B38455;
+  --tg-card-bg: color-mix(in srgb, #FFF9F2 83%, #F0E5D5);
+  --tg-card-border: color-mix(in srgb, #786D67 24%, transparent);
+}
+body[data-lifora-theme="pearl-platinum"] {
+  --background-primary: #F5F7FA;
+  --background-primary-alt: #E9EDF3;
+  --background-secondary: #E9EDF3;
+  --background-secondary-alt: #FFFFFF;
+  --background-modifier-border: color-mix(in srgb, #718092 28%, transparent);
+  --background-modifier-border-hover: color-mix(in srgb, #718092 46%, transparent);
+  --background-modifier-hover: color-mix(in srgb, #6688A5 10%, #E9EDF3);
+  --interactive-normal: #FFFFFF;
+  --interactive-hover: color-mix(in srgb, #6688A5 10%, #FFFFFF);
+  --interactive-accent: #6688A5;
+  --interactive-accent-hover: color-mix(in srgb, #6688A5 82%, #273348);
+  --text-normal: #273348;
+  --text-muted: #718092;
+  --text-faint: color-mix(in srgb, #718092 78%, #F5F7FA);
+  --text-accent: #6688A5;
+  --text-accent-hover: color-mix(in srgb, #6688A5 78%, #273348);
+  --text-on-accent: #FFFFFF;
+  --tg-gold: #6688A5;
+  --tg-theme-accent: #6688A5;
+  --tg-card-bg: color-mix(in srgb, #FFFFFF 83%, #E9EDF3);
+  --tg-card-border: color-mix(in srgb, #718092 24%, transparent);
+}
+body[data-lifora-theme="sakura-mist"] {
+  --background-primary: #FBF4F6;
+  --background-primary-alt: #F3E7EB;
+  --background-secondary: #F3E7EB;
+  --background-secondary-alt: #FFFBFC;
+  --background-modifier-border: color-mix(in srgb, #856E7B 28%, transparent);
+  --background-modifier-border-hover: color-mix(in srgb, #856E7B 46%, transparent);
+  --background-modifier-hover: color-mix(in srgb, #B87895 10%, #F3E7EB);
+  --interactive-normal: #FFFBFC;
+  --interactive-hover: color-mix(in srgb, #B87895 10%, #FFFBFC);
+  --interactive-accent: #B87895;
+  --interactive-accent-hover: color-mix(in srgb, #B87895 82%, #432F3E);
+  --text-normal: #432F3E;
+  --text-muted: #856E7B;
+  --text-faint: color-mix(in srgb, #856E7B 78%, #FBF4F6);
+  --text-accent: #B87895;
+  --text-accent-hover: color-mix(in srgb, #B87895 78%, #432F3E);
+  --text-on-accent: #FFFFFF;
+  --tg-gold: #B87895;
+  --tg-theme-accent: #B87895;
+  --tg-card-bg: color-mix(in srgb, #FFFBFC 83%, #F3E7EB);
+  --tg-card-border: color-mix(in srgb, #856E7B 24%, transparent);
+}
+body[data-lifora-theme="sage-linen"] {
+  --background-primary: #F3F6EF;
+  --background-primary-alt: #E5EBDD;
+  --background-secondary: #E5EBDD;
+  --background-secondary-alt: #FCFDF9;
+  --background-modifier-border: color-mix(in srgb, #6C7D70 28%, transparent);
+  --background-modifier-border-hover: color-mix(in srgb, #6C7D70 46%, transparent);
+  --background-modifier-hover: color-mix(in srgb, #728F73 10%, #E5EBDD);
+  --interactive-normal: #FCFDF9;
+  --interactive-hover: color-mix(in srgb, #728F73 10%, #FCFDF9);
+  --interactive-accent: #728F73;
+  --interactive-accent-hover: color-mix(in srgb, #728F73 82%, #293930);
+  --text-normal: #293930;
+  --text-muted: #6C7D70;
+  --text-faint: color-mix(in srgb, #6C7D70 78%, #F3F6EF);
+  --text-accent: #728F73;
+  --text-accent-hover: color-mix(in srgb, #728F73 78%, #293930);
+  --text-on-accent: #FFFFFF;
+  --tg-gold: #728F73;
+  --tg-theme-accent: #728F73;
+  --tg-card-bg: color-mix(in srgb, #FCFDF9 83%, #E5EBDD);
+  --tg-card-border: color-mix(in srgb, #6C7D70 24%, transparent);
+}
+body[data-lifora-theme="obsidian-gold"] {
+  --background-primary: #151719;
+  --background-primary-alt: #202327;
+  --background-secondary: #202327;
+  --background-secondary-alt: #282C32;
+  --background-modifier-border: color-mix(in srgb, #AEB1B5 28%, transparent);
+  --background-modifier-border-hover: color-mix(in srgb, #AEB1B5 46%, transparent);
+  --background-modifier-hover: color-mix(in srgb, #D5AE65 10%, #202327);
+  --interactive-normal: #282C32;
+  --interactive-hover: color-mix(in srgb, #D5AE65 10%, #282C32);
+  --interactive-accent: #D5AE65;
+  --interactive-accent-hover: color-mix(in srgb, #D5AE65 82%, #F3F0E7);
+  --text-normal: #F3F0E7;
+  --text-muted: #AEB1B5;
+  --text-faint: color-mix(in srgb, #AEB1B5 78%, #151719);
+  --text-accent: #D5AE65;
+  --text-accent-hover: color-mix(in srgb, #D5AE65 78%, #F3F0E7);
+  --text-on-accent: #16181B;
+  --tg-gold: #D5AE65;
+  --tg-theme-accent: #D5AE65;
+  --tg-card-bg: color-mix(in srgb, #282C32 83%, #202327);
+  --tg-card-border: color-mix(in srgb, #AEB1B5 24%, transparent);
+}
+body[data-lifora-theme="midnight-navy"] {
+  --background-primary: #101A2C;
+  --background-primary-alt: #192740;
+  --background-secondary: #192740;
+  --background-secondary-alt: #233653;
+  --background-modifier-border: color-mix(in srgb, #9AACC4 28%, transparent);
+  --background-modifier-border-hover: color-mix(in srgb, #9AACC4 46%, transparent);
+  --background-modifier-hover: color-mix(in srgb, #7EAEEB 10%, #192740);
+  --interactive-normal: #233653;
+  --interactive-hover: color-mix(in srgb, #7EAEEB 10%, #233653);
+  --interactive-accent: #7EAEEB;
+  --interactive-accent-hover: color-mix(in srgb, #7EAEEB 82%, #ECF2FC);
+  --text-normal: #ECF2FC;
+  --text-muted: #9AACC4;
+  --text-faint: color-mix(in srgb, #9AACC4 78%, #101A2C);
+  --text-accent: #7EAEEB;
+  --text-accent-hover: color-mix(in srgb, #7EAEEB 78%, #ECF2FC);
+  --text-on-accent: #16181B;
+  --tg-gold: #7EAEEB;
+  --tg-theme-accent: #7EAEEB;
+  --tg-card-bg: color-mix(in srgb, #233653 83%, #192740);
+  --tg-card-border: color-mix(in srgb, #9AACC4 24%, transparent);
+}
+body[data-lifora-theme="emerald-noir"] {
+  --background-primary: #111E1A;
+  --background-primary-alt: #1B2E27;
+  --background-secondary: #1B2E27;
+  --background-secondary-alt: #254038;
+  --background-modifier-border: color-mix(in srgb, #A0C1B2 28%, transparent);
+  --background-modifier-border-hover: color-mix(in srgb, #A0C1B2 46%, transparent);
+  --background-modifier-hover: color-mix(in srgb, #67C7A0 10%, #1B2E27);
+  --interactive-normal: #254038;
+  --interactive-hover: color-mix(in srgb, #67C7A0 10%, #254038);
+  --interactive-accent: #67C7A0;
+  --interactive-accent-hover: color-mix(in srgb, #67C7A0 82%, #E9F4EE);
+  --text-normal: #E9F4EE;
+  --text-muted: #A0C1B2;
+  --text-faint: color-mix(in srgb, #A0C1B2 78%, #111E1A);
+  --text-accent: #67C7A0;
+  --text-accent-hover: color-mix(in srgb, #67C7A0 78%, #E9F4EE);
+  --text-on-accent: #16181B;
+  --tg-gold: #67C7A0;
+  --tg-theme-accent: #67C7A0;
+  --tg-card-bg: color-mix(in srgb, #254038 83%, #1B2E27);
+  --tg-card-border: color-mix(in srgb, #A0C1B2 24%, transparent);
+}
+body[data-lifora-theme="royal-amethyst"] {
+  --background-primary: #1B1627;
+  --background-primary-alt: #292137;
+  --background-secondary: #292137;
+  --background-secondary-alt: #392D4C;
+  --background-modifier-border: color-mix(in srgb, #B9A9C9 28%, transparent);
+  --background-modifier-border-hover: color-mix(in srgb, #B9A9C9 46%, transparent);
+  --background-modifier-hover: color-mix(in srgb, #B9A0F5 10%, #292137);
+  --interactive-normal: #392D4C;
+  --interactive-hover: color-mix(in srgb, #B9A0F5 10%, #392D4C);
+  --interactive-accent: #B9A0F5;
+  --interactive-accent-hover: color-mix(in srgb, #B9A0F5 82%, #F4EFFC);
+  --text-normal: #F4EFFC;
+  --text-muted: #B9A9C9;
+  --text-faint: color-mix(in srgb, #B9A9C9 78%, #1B1627);
+  --text-accent: #B9A0F5;
+  --text-accent-hover: color-mix(in srgb, #B9A0F5 78%, #F4EFFC);
+  --text-on-accent: #16181B;
+  --tg-gold: #B9A0F5;
+  --tg-theme-accent: #B9A0F5;
+  --tg-card-bg: color-mix(in srgb, #392D4C 83%, #292137);
+  --tg-card-border: color-mix(in srgb, #B9A9C9 24%, transparent);
+}
+body[data-lifora-theme="carbon-copper"] {
+  --background-primary: #1B1A19;
+  --background-primary-alt: #2B2927;
+  --background-secondary: #2B2927;
+  --background-secondary-alt: #35312E;
+  --background-modifier-border: color-mix(in srgb, #BDB0A1 28%, transparent);
+  --background-modifier-border-hover: color-mix(in srgb, #BDB0A1 46%, transparent);
+  --background-modifier-hover: color-mix(in srgb, #D99D70 10%, #2B2927);
+  --interactive-normal: #35312E;
+  --interactive-hover: color-mix(in srgb, #D99D70 10%, #35312E);
+  --interactive-accent: #D99D70;
+  --interactive-accent-hover: color-mix(in srgb, #D99D70 82%, #F4EDE5);
+  --text-normal: #F4EDE5;
+  --text-muted: #BDB0A1;
+  --text-faint: color-mix(in srgb, #BDB0A1 78%, #1B1A19);
+  --text-accent: #D99D70;
+  --text-accent-hover: color-mix(in srgb, #D99D70 78%, #F4EDE5);
+  --text-on-accent: #16181B;
+  --tg-gold: #D99D70;
+  --tg-theme-accent: #D99D70;
+  --tg-card-bg: color-mix(in srgb, #35312E 83%, #2B2927);
+  --tg-card-border: color-mix(in srgb, #BDB0A1 24%, transparent);
+}
+
+/* Respect the chosen palette across the main Obsidian workspace and LIFORA surfaces. */
+body[data-lifora-theme] .workspace,
+body[data-lifora-theme] .workspace-leaf-content,
+body[data-lifora-theme] .view-content,
+body[data-lifora-theme] .workspace-tab-header-container,
+body[data-lifora-theme] .nav-files-container,
+body[data-lifora-theme] .markdown-preview-view,
+body[data-lifora-theme] .markdown-source-view {
+  color: var(--text-normal);
+  background-color: var(--background-primary);
+}
+body[data-lifora-theme] .workspace-sidedock-vault-profile,
+body[data-lifora-theme] .workspace-ribbon,
+body[data-lifora-theme] .mod-left-split .workspace-leaf-content,
+body[data-lifora-theme] .mod-right-split .workspace-leaf-content,
+body[data-lifora-theme] .modal,
+body[data-lifora-theme] .menu {
+  background-color: var(--background-secondary);
+  color: var(--text-normal);
+}
+body[data-lifora-theme] .tg-home-app,
+body[data-lifora-theme] .tg-section-dashboard,
+body[data-lifora-theme] .tg-course-panel,
+body[data-lifora-theme] .tg-books-app,
+body[data-lifora-theme] .tg-goals-app,
+body[data-lifora-theme] .tg-daily-planner-app,
+body[data-lifora-theme] .tg-course-modal {
+  color: var(--text-normal);
+  --tg-gold: var(--tg-theme-accent);
+}
+/* Keep the weekday image and any explicit section image set by the renderer.
+   Do NOT use the `background` shorthand here: it replaced the inline weekday
+   image on every theme change (especially noticeable with light presets). */
+body[data-lifora-theme] .tg-global-day-header,
+body[data-lifora-theme] .tg-home-hero,
+body[data-lifora-theme] .tg-home-recovery-hero {
+  background-color: var(--background-secondary) !important;
+  border-color: color-mix(in srgb, var(--tg-global-day-accent, var(--tg-theme-accent)) 35%, transparent) !important;
+  color: var(--text-normal) !important;
+}
+/* Only the fallback without any weekday picture uses a palette-derived gradient. */
+body[data-lifora-theme] .tg-global-day-header.no-daily-cover {
+  background-image: linear-gradient(125deg,
+    color-mix(in srgb, var(--tg-global-day-accent, var(--tg-theme-accent)) 22%, var(--background-secondary)),
+    var(--background-primary)) !important;
+}
+/* The cover photo always keeps legible bright lettering in both light and dark themes. */
+body[data-lifora-theme] .tg-global-day-header:is(.has-daily-cover, .has-section-cover) {
+  color: #fff !important;
+}
+body[data-lifora-theme] .tg-global-day-header:is(.has-daily-cover, .has-section-cover) .tg-global-day-header-title,
+body[data-lifora-theme] .tg-global-day-header:is(.has-daily-cover, .has-section-cover) .tg-global-day-header-date,
+body[data-lifora-theme] .tg-global-day-header:is(.has-daily-cover, .has-section-cover) .tg-global-day-header-context-label {
+  color: #fff !important;
+  text-shadow: 0 2px 9px rgba(0,0,0,.65);
+}
+body[data-lifora-theme] .tg-global-day-header-title,
+body[data-lifora-theme] .tg-home-hero h1,
+body[data-lifora-theme] .tg-home-recovery-hero .tg-global-day-header-title {
+  color: var(--text-normal) !important;
+}
+body[data-lifora-theme] .tg-home-stat,
+body[data-lifora-theme] .tg-home-section-card,
+body[data-lifora-theme] .tg-explorer-folder-card {
+  border-color: var(--tg-card-border);
+  background-color: var(--tg-card-bg);
+}
+body[data-lifora-theme] button:focus-visible,
+body[data-lifora-theme] a:focus-visible {
+  outline: 2px solid var(--tg-theme-accent);
+  outline-offset: 2px;
+}
+/* Premium theme gallery, responsive and keyboard-friendly. */
+.modal:has(.tg-theme-gallery-modal) {
+  width: min(1240px, 94vw);
+  max-width: min(1240px, 94vw);
+}
+
+.tg-theme-gallery-modal { width: min(1180px, 92vw); max-width: 1180px; max-height: 88vh; padding: 28px 32px 26px; }
+.tg-theme-gallery-header { display:flex; align-items:flex-start; justify-content:space-between; gap:22px; margin-bottom:18px; }
+.tg-theme-gallery-header h2 { font-size:1.7rem; margin:5px 0 7px; font-weight:750; }
+.tg-theme-eyebrow { color:var(--text-accent); letter-spacing:.16em; font-size:10px; font-weight:800; }
+.tg-theme-lead { margin:0; color:var(--text-muted); max-width:560px; line-height:1.5; font-size:.9rem; }
+.tg-theme-emblem { display:grid; place-items:center; width:48px; height:48px; border-radius:16px; color:var(--text-accent); background:color-mix(in srgb,var(--interactive-accent) 13%,var(--background-secondary)); }
+.tg-theme-emblem svg {width:23px;height:23px;}
+.tg-theme-filters { display:flex; gap:7px; margin:18px 0 16px; flex-wrap:wrap; }
+.tg-theme-filter { font-size:12px; padding:7px 16px; border:1px solid var(--background-modifier-border); border-radius:30px; color:var(--text-muted); background:var(--background-secondary); cursor:pointer; }
+.tg-theme-filter.is-active { background:var(--interactive-accent); color:var(--text-on-accent); border-color:transparent; }
+.tg-theme-gallery-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; max-height:min(60vh,650px); overflow-y:auto; padding:5px; }
+.tg-theme-choice { min-width:0; display:block; text-align:start; padding:8px 8px 10px; border:1px solid var(--background-modifier-border); border-radius:17px; background:var(--background-secondary); color:var(--text-normal); cursor:pointer; transition:transform .15s, border-color .15s, box-shadow .15s; }
+.tg-theme-choice:hover { transform:translateY(-2px); border-color:var(--interactive-accent); box-shadow:0 9px 25px rgba(0,0,0,.12); }
+.tg-theme-choice.is-selected { border-color:var(--interactive-accent); box-shadow:0 0 0 1px var(--interactive-accent); }
+.tg-theme-swatch { display:flex; height:132px; background:var(--theme-bg); border:1px solid color-mix(in srgb,var(--theme-text) 12%,transparent); border-radius:10px; overflow:hidden; }
+.tg-theme-swatch-rail { width:29px; background:var(--theme-surface); padding:11px 8px; display:flex; flex-direction:column; gap:8px; }
+.tg-theme-swatch-rail-dot { width:12px; height:7px; border-radius:3px; background:var(--theme-accent); opacity:.6; }
+.tg-theme-swatch-rail-dot:first-child {opacity:1;}
+.tg-theme-swatch-main { flex:1; padding:13px 12px 8px; min-width:0; }
+.tg-theme-swatch-title { height:8px; width:58%; background:var(--theme-text); opacity:.84; border-radius:3px; margin-bottom:7px; }
+.tg-theme-swatch-subtitle { height:4px; width:75%; background:var(--theme-text); opacity:.28; border-radius:3px; }
+.tg-theme-swatch-panels { display:flex; gap:7px; margin:13px 0 10px; }
+.tg-theme-swatch-panel { flex:1; height:29px; background:var(--theme-card); border-radius:6px; border-top:2px solid var(--theme-accent); }
+.tg-theme-swatch-progress { width:100%; height:5px; border-radius:8px; background:var(--theme-surface); overflow:hidden; }
+.tg-theme-swatch-progress > div {width:64%;height:100%;background:var(--theme-accent);}
+.tg-theme-choice-info { display:flex; align-items:center; justify-content:space-between; gap:8px; padding:11px 5px 3px; }
+.tg-theme-choice-info strong {font-size:12px; display:block; }
+.tg-theme-choice-info small {font-size:10px; display:block; color:var(--text-muted); margin-top:3px; line-height:1.3; }
+.tg-theme-choice-state {color:var(--text-faint);}
+.tg-theme-choice-state.is-selected {color:var(--interactive-accent);}
+.tg-theme-choice-state svg {width:18px;height:18px;}
+.tg-theme-gallery-footer {display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; margin-top:18px; padding-top:15px; border-top:1px solid var(--background-modifier-border);}
+.tg-theme-gallery-hint {font-size:11px;color:var(--text-muted);max-width:420px;}
+.tg-theme-gallery-actions {display:flex;gap:9px;}
+.tg-theme-personalization-entry {display:flex; align-items:center; justify-content:space-between; gap:15px; margin:13px 0 20px; padding:14px 15px; border:1px solid var(--background-modifier-border); border-radius:15px; background:var(--background-secondary);}
+.tg-theme-personalization-entry strong {display:block;font-size:13px;}
+.tg-theme-personalization-entry small {display:block;color:var(--text-muted);font-size:11px;margin-top:4px;}
+@media(max-width:1050px){.tg-theme-gallery-grid {grid-template-columns:repeat(3,minmax(0,1fr));}}
+@media(max-width:780px){.tg-theme-gallery-grid {grid-template-columns:repeat(2,minmax(0,1fr));}.tg-theme-gallery-modal {width:min(94vw,700px);padding:18px;}}
+@media(max-width:780px){.modal:has(.tg-theme-gallery-modal) {width:94vw;max-width:94vw;}}
+@media(max-width:480px){.tg-theme-gallery-grid {grid-template-columns:1fr;max-height:53vh;}.tg-theme-gallery-header h2{font-size:1.35rem;}.tg-theme-personalization-entry{flex-wrap:wrap;}}
+@media(prefers-reduced-motion:reduce){body[data-lifora-theme],.tg-theme-choice{transition:none;}}
+
+/* LIFORA v2.10.0 — Desktop Full Backup Studio */
+.tg-full-backup-center {
+  max-width: min(680px, 92vw);
+  padding: 8px 6px 12px;
+}
+.tg-full-backup-center .tg-full-backup-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 8px;
+}
+.tg-full-backup-center .tg-full-backup-title > svg {
+  width: 30px;
+  height: 30px;
+  color: var(--interactive-accent);
+}
+.tg-full-backup-center .tg-full-backup-title h2 { margin: 0; font-size: 1.45rem; }
+.tg-full-backup-center .tg-personalization-group {
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-secondary);
+  padding: 16px;
+  border-radius: 16px;
+  margin: 12px 0;
+}
+.tg-full-backup-center .tg-personalization-group h3 { margin: 0 0 10px; font-size: 1.04rem; }
+.tg-full-backup-center .tg-full-backup-path {
+  width: 100%;
+  min-height: 40px;
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-primary);
+  border-radius: 9px;
+  padding: 9px 10px;
+  color: var(--text-normal);
+  font-family: var(--font-monospace);
+  font-size: .89rem;
+}
+.tg-full-backup-center .tg-backup-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 0;
+}
+.tg-full-backup-center .tg-backup-select { width:100%; margin: 0 0 12px; min-height: 42px; }
+.tg-full-backup-center button { min-height: 36px; }
+.tg-full-backup-center button:focus-visible,
+.tg-full-backup-center input:focus-visible,
+.tg-full-backup-center select:focus-visible {
+  outline: 2px solid var(--interactive-accent);
+  outline-offset: 2px;
+}
+@media (max-width: 560px) {
+  .tg-full-backup-center .tg-backup-actions > button { flex: 1 1 100%; }
+}
+
+/* NEW DARK THEME: Nocturne Ink */
+body[data-lifora-theme="nocturne-ink"] {
+  --background-primary: #11151F;
+  --background-primary-alt: #1C2331;
+  --background-secondary: #1C2331;
+  --background-secondary-alt: #273247;
+  --background-modifier-border: color-mix(in srgb, #A6B2C9 28%, transparent);
+  --background-modifier-border-hover: color-mix(in srgb, #A6B2C9 46%, transparent);
+  --background-modifier-hover: color-mix(in srgb, #91B4FF 10%, #1C2331);
+  --interactive-normal: #273247;
+  --interactive-hover: color-mix(in srgb, #91B4FF 10%, #273247);
+  --interactive-accent: #91B4FF;
+  --interactive-accent-hover: color-mix(in srgb, #91B4FF 82%, #F2F5FF);
+  --text-normal: #F2F5FF;
+  --text-muted: #A6B2C9;
+  --text-faint: color-mix(in srgb, #A6B2C9 78%, #11151F);
+  --text-accent: #91B4FF;
+  --text-accent-hover: color-mix(in srgb, #91B4FF 78%, #F2F5FF);
+  --text-on-accent: #11151F;
+  --tg-gold: #91B4FF;
+  --tg-theme-accent: #91B4FF;
+  --tg-card-bg: color-mix(in srgb, #273247 83%, #1C2331);
+  --tg-card-border: color-mix(in srgb, #A6B2C9 24%, transparent);
+}
+
+/* NEW DARK THEME: Arctic Slate */
+body[data-lifora-theme="arctic-slate"] {
+  --background-primary: #101E27;
+  --background-primary-alt: #1B303B;
+  --background-secondary: #1B303B;
+  --background-secondary-alt: #28414E;
+  --background-modifier-border: color-mix(in srgb, #A6C2CD 28%, transparent);
+  --background-modifier-border-hover: color-mix(in srgb, #A6C2CD 46%, transparent);
+  --background-modifier-hover: color-mix(in srgb, #8CD4E0 10%, #1B303B);
+  --interactive-normal: #28414E;
+  --interactive-hover: color-mix(in srgb, #8CD4E0 10%, #28414E);
+  --interactive-accent: #8CD4E0;
+  --interactive-accent-hover: color-mix(in srgb, #8CD4E0 82%, #F0F8FC);
+  --text-normal: #F0F8FC;
+  --text-muted: #A6C2CD;
+  --text-faint: color-mix(in srgb, #A6C2CD 78%, #101E27);
+  --text-accent: #8CD4E0;
+  --text-accent-hover: color-mix(in srgb, #8CD4E0 78%, #F0F8FC);
+  --text-on-accent: #101E27;
+  --tg-gold: #8CD4E0;
+  --tg-theme-accent: #8CD4E0;
+  --tg-card-bg: color-mix(in srgb, #28414E 83%, #1B303B);
+  --tg-card-border: color-mix(in srgb, #A6C2CD 24%, transparent);
+}
+
+/* NEW DARK THEME: Bordeaux Velvet */
+body[data-lifora-theme="bordeaux-velvet"] {
+  --background-primary: #24171E;
+  --background-primary-alt: #35222D;
+  --background-secondary: #35222D;
+  --background-secondary-alt: #462D3A;
+  --background-modifier-border: color-mix(in srgb, #D3AAB9 28%, transparent);
+  --background-modifier-border-hover: color-mix(in srgb, #D3AAB9 46%, transparent);
+  --background-modifier-hover: color-mix(in srgb, #E6A0B6 10%, #35222D);
+  --interactive-normal: #462D3A;
+  --interactive-hover: color-mix(in srgb, #E6A0B6 10%, #462D3A);
+  --interactive-accent: #E6A0B6;
+  --interactive-accent-hover: color-mix(in srgb, #E6A0B6 82%, #FFF1F3);
+  --text-normal: #FFF1F3;
+  --text-muted: #D3AAB9;
+  --text-faint: color-mix(in srgb, #D3AAB9 78%, #24171E);
+  --text-accent: #E6A0B6;
+  --text-accent-hover: color-mix(in srgb, #E6A0B6 78%, #FFF1F3);
+  --text-on-accent: #24171E;
+  --tg-gold: #E6A0B6;
+  --tg-theme-accent: #E6A0B6;
+  --tg-card-bg: color-mix(in srgb, #462D3A 83%, #35222D);
+  --tg-card-border: color-mix(in srgb, #D3AAB9 24%, transparent);
+}
+
+/* NEW DARK THEME: Deep Teal */
+body[data-lifora-theme="deep-teal"] {
+  --background-primary: #102422;
+  --background-primary-alt: #1A3633;
+  --background-secondary: #1A3633;
+  --background-secondary-alt: #274943;
+  --background-modifier-border: color-mix(in srgb, #A8CDC5 28%, transparent);
+  --background-modifier-border-hover: color-mix(in srgb, #A8CDC5 46%, transparent);
+  --background-modifier-hover: color-mix(in srgb, #6CD4BD 10%, #1A3633);
+  --interactive-normal: #274943;
+  --interactive-hover: color-mix(in srgb, #6CD4BD 10%, #274943);
+  --interactive-accent: #6CD4BD;
+  --interactive-accent-hover: color-mix(in srgb, #6CD4BD 82%, #EAF9F5);
+  --text-normal: #EAF9F5;
+  --text-muted: #A8CDC5;
+  --text-faint: color-mix(in srgb, #A8CDC5 78%, #102422);
+  --text-accent: #6CD4BD;
+  --text-accent-hover: color-mix(in srgb, #6CD4BD 78%, #EAF9F5);
+  --text-on-accent: #102422;
+  --tg-gold: #6CD4BD;
+  --tg-theme-accent: #6CD4BD;
+  --tg-card-bg: color-mix(in srgb, #274943 83%, #1A3633);
+  --tg-card-border: color-mix(in srgb, #A8CDC5 24%, transparent);
+}
+
+/* NEW DARK THEME: Graphite Mint */
+body[data-lifora-theme="graphite-mint"] {
+  --background-primary: #161D1A;
+  --background-primary-alt: #25332D;
+  --background-secondary: #25332D;
+  --background-secondary-alt: #31463B;
+  --background-modifier-border: color-mix(in srgb, #A7BFB0 28%, transparent);
+  --background-modifier-border-hover: color-mix(in srgb, #A7BFB0 46%, transparent);
+  --background-modifier-hover: color-mix(in srgb, #9EDEAC 10%, #25332D);
+  --interactive-normal: #31463B;
+  --interactive-hover: color-mix(in srgb, #9EDEAC 10%, #31463B);
+  --interactive-accent: #9EDEAC;
+  --interactive-accent-hover: color-mix(in srgb, #9EDEAC 82%, #F0FBF4);
+  --text-normal: #F0FBF4;
+  --text-muted: #A7BFB0;
+  --text-faint: color-mix(in srgb, #A7BFB0 78%, #161D1A);
+  --text-accent: #9EDEAC;
+  --text-accent-hover: color-mix(in srgb, #9EDEAC 78%, #F0FBF4);
+  --text-on-accent: #161D1A;
+  --tg-gold: #9EDEAC;
+  --tg-theme-accent: #9EDEAC;
+  --tg-card-bg: color-mix(in srgb, #31463B 83%, #25332D);
+  --tg-card-border: color-mix(in srgb, #A7BFB0 24%, transparent);
+}
+
+/* NEW DARK THEME: Astral Indigo */
+body[data-lifora-theme="astral-indigo"] {
+  --background-primary: #16192C;
+  --background-primary-alt: #232943;
+  --background-secondary: #232943;
+  --background-secondary-alt: #343B5B;
+  --background-modifier-border: color-mix(in srgb, #ADB5D1 28%, transparent);
+  --background-modifier-border-hover: color-mix(in srgb, #ADB5D1 46%, transparent);
+  --background-modifier-hover: color-mix(in srgb, #A9A8F7 10%, #232943);
+  --interactive-normal: #343B5B;
+  --interactive-hover: color-mix(in srgb, #A9A8F7 10%, #343B5B);
+  --interactive-accent: #A9A8F7;
+  --interactive-accent-hover: color-mix(in srgb, #A9A8F7 82%, #F2F1FF);
+  --text-normal: #F2F1FF;
+  --text-muted: #ADB5D1;
+  --text-faint: color-mix(in srgb, #ADB5D1 78%, #16192C);
+  --text-accent: #A9A8F7;
+  --text-accent-hover: color-mix(in srgb, #A9A8F7 78%, #F2F1FF);
+  --text-on-accent: #16192C;
+  --tg-gold: #A9A8F7;
+  --tg-theme-accent: #A9A8F7;
+  --tg-card-bg: color-mix(in srgb, #343B5B 83%, #232943);
+  --tg-card-border: color-mix(in srgb, #ADB5D1 24%, transparent);
+}
+
+/* Additional dark studio themes. Daily note covers and weekday colors remain independent. */
+body[data-lifora-theme="midnight-orchid"] {
+  --background-primary: #17151F; --background-primary-alt: #262131; --background-secondary: #262131; --background-secondary-alt: #393145;
+  --background-modifier-border: color-mix(in srgb, #C1B5C5 28%, transparent); --background-modifier-border-hover: color-mix(in srgb, #C1B5C5 46%, transparent);
+  --background-modifier-hover: color-mix(in srgb, #CDA1DC 10%, #262131); --interactive-normal: #393145; --interactive-hover: color-mix(in srgb, #CDA1DC 10%, #393145);
+  --interactive-accent: #CDA1DC; --interactive-accent-hover: color-mix(in srgb, #CDA1DC 82%, #F8F2FA); --text-normal: #F8F2FA; --text-muted: #C1B5C5; --text-faint: color-mix(in srgb, #C1B5C5 78%, #17151F); --text-accent: #CDA1DC; --text-accent-hover: color-mix(in srgb, #CDA1DC 78%, #F8F2FA); --text-on-accent: #17151F; --tg-gold: #CDA1DC; --tg-theme-accent: #CDA1DC; --tg-card-bg: color-mix(in srgb, #393145 83%, #262131); --tg-card-border: color-mix(in srgb, #C1B5C5 24%, transparent);
+}
+body[data-lifora-theme="obsidian-crimson"] { --background-primary:#1D1718; --background-primary-alt:#302326; --background-secondary:#302326; --background-secondary-alt:#463235; --interactive-normal:#463235; --interactive-accent:#E7A08F; --interactive-accent-hover:#FFF3F0; --text-normal:#FFF3F0; --text-muted:#CBB1AC; --text-faint:#8F7775; --text-accent:#E7A08F; --text-accent-hover:#FFF3F0; --text-on-accent:#1D1718; --tg-gold:#E7A08F; --tg-theme-accent:#E7A08F; --tg-card-bg:#3B292C; --tg-card-border:color-mix(in srgb,#CBB1AC 24%,transparent); }
+body[data-lifora-theme="cyber-carbon"] { --background-primary:#11171C; --background-primary-alt:#1C2730; --background-secondary:#1C2730; --background-secondary-alt:#293945; --interactive-normal:#293945; --interactive-accent:#76C8E5; --interactive-accent-hover:#F1F8FB; --text-normal:#F1F8FB; --text-muted:#AABBC5; --text-faint:#71838D; --text-accent:#76C8E5; --text-accent-hover:#F1F8FB; --text-on-accent:#11171C; --tg-gold:#76C8E5; --tg-theme-accent:#76C8E5; --tg-card-bg:#24333D; --tg-card-border:color-mix(in srgb,#AABBC5 24%,transparent); }
+body[data-lifora-theme="alpine-onyx"] { --background-primary:#171A18; --background-primary-alt:#262B28; --background-secondary:#262B28; --background-secondary-alt:#343C38; --interactive-normal:#343C38; --interactive-accent:#BAD7C1; --interactive-accent-hover:#F3F7F4; --text-normal:#F3F7F4; --text-muted:#B3BFB7; --text-faint:#7F9186; --text-accent:#BAD7C1; --text-accent-hover:#F3F7F4; --text-on-accent:#171A18; --tg-gold:#BAD7C1; --tg-theme-accent:#BAD7C1; --tg-card-bg:#2D3732; --tg-card-border:color-mix(in srgb,#B3BFB7 24%,transparent); }
+body[data-lifora-theme="royal-bronze"] { --background-primary:#1E1B17; --background-primary-alt:#302B25; --background-secondary:#302B25; --background-secondary-alt:#443C32; --interactive-normal:#443C32; --interactive-accent:#E1B873; --interactive-accent-hover:#FBF5EB; --text-normal:#FBF5EB; --text-muted:#C4B7A5; --text-faint:#8E8171; --text-accent:#E1B873; --text-accent-hover:#FBF5EB; --text-on-accent:#1E1B17; --tg-gold:#E1B873; --tg-theme-accent:#E1B873; --tg-card-bg:#3A332A; --tg-card-border:color-mix(in srgb,#C4B7A5 24%,transparent); }
+body[data-lifora-theme="polar-obsidian"] { --background-primary:#13171D; --background-primary-alt:#202630; --background-secondary:#202630; --background-secondary-alt:#303946; --interactive-normal:#303946; --interactive-accent:#C7D5EE; --interactive-accent-hover:#F4F7FB; --text-normal:#F4F7FB; --text-muted:#AEB9C8; --text-faint:#798697; --text-accent:#C7D5EE; --text-accent-hover:#F4F7FB; --text-on-accent:#13171D; --tg-gold:#C7D5EE; --tg-theme-accent:#C7D5EE; --tg-card-bg:#29323F; --tg-card-border:color-mix(in srgb,#AEB9C8 24%,transparent); }
+body[data-lifora-theme="focus-flow"] { --background-primary:#151719; --background-primary-alt:#202327; --background-secondary:#202327; --background-secondary-alt:#2B3036; --interactive-normal:#2B3036; --interactive-accent:#5ED6A5; --interactive-accent-hover:#F5F7F9; --text-normal:#F5F7F9; --text-muted:#A7AFB8; --text-faint:#778089; --text-accent:#5ED6A5; --text-accent-hover:#F5F7F9; --text-on-accent:#151719; --tg-gold:#5ED6A5; --tg-theme-accent:#5ED6A5; --tg-card-bg:#252A2F; --tg-card-border:color-mix(in srgb,#A7AFB8 24%,transparent); }
+body[data-lifora-theme="night-task"] { --background-primary:#12151B; --background-primary-alt:#1D222B; --background-secondary:#1D222B; --background-secondary-alt:#29313D; --interactive-normal:#29313D; --interactive-accent:#78A9FF; --interactive-accent-hover:#F1F5FC; --text-normal:#F1F5FC; --text-muted:#A5B0C0; --text-faint:#768294; --text-accent:#78A9FF; --text-accent-hover:#F1F5FC; --text-on-accent:#12151B; --tg-gold:#78A9FF; --tg-theme-accent:#78A9FF; --tg-card-bg:#252C37; --tg-card-border:color-mix(in srgb,#A5B0C0 24%,transparent); }
+body[data-lifora-theme="deep-work"] { --background-primary:#161616; --background-primary-alt:#242424; --background-secondary:#242424; --background-secondary-alt:#333333; --interactive-normal:#333333; --interactive-accent:#F0A35B; --interactive-accent-hover:#F6F1E8; --text-normal:#F6F1E8; --text-muted:#B7AEA2; --text-faint:#82796E; --text-accent:#F0A35B; --text-accent-hover:#F6F1E8; --text-on-accent:#161616; --tg-gold:#F0A35B; --tg-theme-accent:#F0A35B; --tg-card-bg:#2C2C2C; --tg-card-border:color-mix(in srgb,#B7AEA2 24%,transparent); }
+body[data-lifora-theme="moonlit-planner"] { --background-primary:#141722; --background-primary-alt:#20263A; --background-secondary:#20263A; --background-secondary-alt:#2D3550; --interactive-normal:#2D3550; --interactive-accent:#C4A7FF; --interactive-accent-hover:#F4F5FF; --text-normal:#F4F5FF; --text-muted:#AEB6D0; --text-faint:#7F89A7; --text-accent:#C4A7FF; --text-accent-hover:#F4F5FF; --text-on-accent:#141722; --tg-gold:#C4A7FF; --tg-theme-accent:#C4A7FF; --tg-card-bg:#272D44; --tg-card-border:color-mix(in srgb,#AEB6D0 24%,transparent); }
+
+/* Premium details dialog — works from Books Library even on mobile/source mode. */
+.tg-lifora-book-details-modal { max-width: min(710px, 94vw); padding: 20px 25px; }
+.tg-book-details-top { display: flex; align-items: start; gap: 18px; margin-bottom: 20px; }
+.tg-book-details-cover { width: 116px; height: 153px; flex: 0 0 116px; border-radius: 13px; overflow: hidden; background: var(--background-secondary); display:flex; align-items:center; justify-content:center; }
+.tg-book-details-cover img { width:100%; height:100%; object-fit:cover; }
+.tg-book-details-cover svg { width:35px; height:35px; }
+.tg-book-details-heading { min-width:0; flex:1; }
+.tg-book-details-heading h2 { margin:5px 0 8px; font-size:clamp(1.14rem,2.2vw,1.6rem); line-height:1.24; overflow-wrap:anywhere; }
+.tg-book-details-heading p { color:var(--text-muted); margin:0 0 12px; }
+.tg-book-details-progress { margin:10px 0 15px; }
+.tg-book-details-progress-line { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:8px; font-size:.83rem; }
+.tg-book-details-progress-line span { font-variant-numeric:tabular-nums; color:var(--text-accent); font-weight:750; }
+.tg-book-details-info { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; margin:14px 0 18px; }
+.tg-book-details-info-item { display:grid; gap:5px; min-width:0; border:1px solid var(--background-modifier-border); border-radius:11px; padding:10px 12px; background:var(--background-secondary); }
+.tg-book-details-info-item span { color:var(--text-muted); font-size:.66rem; }
+.tg-book-details-info-item strong { color:var(--text-normal); font-size:.84rem; overflow-wrap:anywhere; }
+.tg-book-details-modal-actions { display:flex; flex-wrap:wrap; justify-content:flex-start; gap:8px; }
+.tg-theme-name-row { display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
+.tg-theme-new-label { display:inline-block; border:1px solid color-mix(in srgb,var(--interactive-accent) 40%,transparent); background:color-mix(in srgb,var(--interactive-accent) 13%,var(--background-secondary)); color:var(--text-accent); padding:2px 5px; font-weight:800; font-size:8px; letter-spacing:.055em; border-radius:5px; }
+@media(max-width:560px) {
+  .tg-lifora-book-details-modal { padding:12px 15px; }
+  .tg-book-details-top { gap:11px; }
+  .tg-book-details-cover { width:74px; height:104px; flex-basis:74px; }
+  .tg-book-details-info { gap:6px; }
+  .tg-book-details-info-item { padding:8px; }
+  .tg-book-details-modal-actions .tg-course-btn { flex:1 1 42%; justify-content:center; }
+}
+
+
+/* LIFORA Writing Studio: native Excalidraw drawing launcher */
+.tg-editor-toolbar:has(> .tg-editor-excalidraw-panel) {
+  flex-wrap: wrap;
+  overflow: visible;
+}
+.tg-editor-excalidraw-trigger[aria-expanded="true"] {
+  color: var(--text-accent);
+  background: color-mix(in srgb, var(--interactive-accent) 14%, var(--background-primary));
+  border-color: color-mix(in srgb, var(--interactive-accent) 48%, var(--background-modifier-border));
+}
+.tg-editor-excalidraw-panel {
+  order: 20;
+  flex: 1 0 100%;
+  min-width: 0;
+  display: grid;
+  gap: 11px;
+  padding: 11px;
+  border: 1px solid color-mix(in srgb, var(--interactive-accent) 33%, var(--background-modifier-border));
+  border-radius: 10px;
+  background: var(--background-primary);
+  box-shadow: 0 7px 21px rgba(0, 0, 0, .11);
+}
+.tg-editor-excalidraw-panel-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.tg-editor-excalidraw-icon,
+.tg-editor-excalidraw-action-icon {
+  width: 33px;
+  height: 33px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--interactive-accent) 13%, var(--background-secondary));
+  color: var(--text-accent);
+  flex: 0 0 auto;
+}
+.tg-editor-excalidraw-icon svg,
+.tg-editor-excalidraw-action-icon svg { width: 18px; height: 18px; }
+.tg-editor-excalidraw-copy,
+.tg-editor-excalidraw-action-copy { display: grid; gap: 3px; min-width: 0; }
+.tg-editor-excalidraw-copy strong { font-size: .84rem; color: var(--text-normal); }
+.tg-editor-excalidraw-copy > span,
+.tg-editor-excalidraw-action-copy > span { color: var(--text-muted); font-size: .68rem; }
+.tg-editor-excalidraw-close {
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 6px;
+  color: var(--text-muted);
+  background: var(--background-secondary);
+  cursor: pointer;
+  margin-inline-start: auto;
+}
+.tg-editor-excalidraw-close svg { width: 15px; height: 15px; }
+.tg-editor-excalidraw-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.tg-editor-excalidraw-action {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  min-height: 49px;
+  padding: 8px 10px;
+  border-radius: 9px;
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-secondary);
+  text-align: start;
+  color: var(--text-normal);
+  cursor: pointer;
+}
+.tg-editor-excalidraw-action:hover,
+.tg-editor-excalidraw-action:focus-visible {
+  border-color: var(--interactive-accent);
+  background: var(--background-modifier-hover);
+}
+.tg-editor-excalidraw-action-copy strong { color: var(--text-normal); font-size: .75rem; }
+.tg-editor-excalidraw-warning,
+.tg-editor-excalidraw-hint {
+  display: flex;
+  align-items: start;
+  gap: 7px;
+  padding: 9px 10px;
+  border-radius: 8px;
+  color: var(--text-muted);
+  background: var(--background-secondary);
+  font-size: .67rem;
+  line-height: 1.45;
+}
+.tg-editor-excalidraw-warning svg { width: 14px; height: 14px; flex: 0 0 auto; }
+.tg-lifora-excalidraw-picker { width: min(620px, 94vw); }
+.tg-excalidraw-picker-description,
+.tg-excalidraw-picker-empty { color: var(--text-muted); font-size: .79rem; }
+.tg-excalidraw-picker-search { width: 100%; margin-bottom: 11px; }
+.tg-excalidraw-picker-results { display: grid; gap: 7px; max-height: 54vh; overflow-y: auto; }
+.tg-excalidraw-picker-item { display:flex; align-items:center; flex-wrap:wrap; gap:7px; padding:8px 9px; border:1px solid var(--background-modifier-border); border-radius:9px; }
+.tg-excalidraw-picker-item-info { display:grid; gap:3px; min-width:100px; flex:1; }
+.tg-excalidraw-picker-item-info strong { color:var(--text-normal); font-size:.77rem; overflow-wrap:anywhere; }
+.tg-excalidraw-picker-item-info span { color:var(--text-muted); font-size:.59rem; overflow-wrap:anywhere; }
+.tg-excalidraw-picker-insert, .tg-excalidraw-picker-open { flex:0 0 auto; min-height:30px; padding:5px 10px; border-radius:7px; font-size:.72rem; }
+.tg-excalidraw-picker-insert { background:var(--interactive-accent); color:var(--text-on-accent); }
+.tg-excalidraw-picker-open { border:1px solid var(--background-modifier-border); background:var(--background-secondary); color:var(--text-normal); }
+.tg-editor-toolbar.is-collapsed .tg-editor-excalidraw-panel { display: none; }
+@media (max-width: 570px) {
+  .tg-editor-excalidraw-actions { grid-template-columns: minmax(0, 1fr); }
+  .tg-editor-excalidraw-panel { padding: 8px; }
+  .tg-editor-excalidraw-action { min-height: 43px; }
+  .tg-lifora-excalidraw-picker { max-width: 96vw; }
+}
+
+
+/* LIFORA v2.10.2: unclipped, responsive drawing actions and inline SVG sketch */
+.tg-lifora-drawing-action-modal { width:min(510px,94vw); }
+.tg-lifora-drawing-intro { color:var(--text-muted);font-size:.84rem;line-height:1.6; }
+.tg-lifora-drawing-action-grid { display:grid;gap:10px;margin:14px 0; }
+.tg-lifora-drawing-action { display:flex;align-items:center;gap:12px;text-align:start;min-height:72px;padding:12px;border:1px solid var(--background-modifier-border);border-radius:12px;color:var(--text-normal);background:var(--background-secondary);cursor:pointer; }
+.tg-lifora-drawing-action:hover,.tg-lifora-drawing-action:focus-visible { border-color:var(--interactive-accent);background:var(--background-modifier-hover); }
+.tg-lifora-drawing-action-icon {width:40px;height:40px;display:grid;place-items:center;flex-shrink:0;border-radius:11px;background:color-mix(in srgb,var(--interactive-accent) 15%,var(--background-primary));color:var(--text-accent); }
+.tg-lifora-drawing-action-icon svg {width:21px;height:21px;}
+.tg-lifora-drawing-action-text {display:grid;gap:4px;flex:1;min-width:0;}
+.tg-lifora-drawing-action-text strong {font-size:.89rem;}
+.tg-lifora-drawing-action-text>span {display:block;min-width:0;font-size:.72rem;color:var(--text-muted);line-height:1.35;white-space:normal;overflow-wrap:anywhere;word-break:break-word;}
+.tg-lifora-drawing-action-chevron {color:var(--text-faint);}
+.tg-lifora-drawing-action-chevron svg {width:17px;height:17px;}
+.tg-lifora-drawing-info {font-size:.72rem;line-height:1.5;padding:10px 12px;border-radius:9px;background:var(--background-secondary);color:var(--text-muted);}
+.tg-lifora-advanced-toggle { display:flex; align-items:center; gap:8px; width:100%; margin-top:14px; padding:9px 11px; border:1px solid var(--background-modifier-border); border-radius:10px; color:var(--text-muted); background:var(--background-secondary); cursor:pointer; font-size:.74rem; text-align:start; }
+.tg-lifora-advanced-toggle:hover { border-color:var(--interactive-accent); color:var(--text-normal); background:var(--background-modifier-hover); }
+.tg-lifora-advanced-toggle svg { width:16px; height:16px; color:var(--interactive-accent); flex:none; }
+.tg-lifora-native-command-search[hidden], .tg-lifora-native-command-list[hidden] { display:none !important; }
+.tg-lifora-inline-sketch {display:grid;gap:10px;width:100%;max-width:100%;margin:6px 0 12px;padding:12px;border:1px solid color-mix(in srgb,var(--interactive-accent) 35%,var(--background-modifier-border));border-radius:12px;background:var(--background-primary);box-shadow:0 6px 20px rgba(0,0,0,.08);}
+.tg-lifora-inline-sketch-header {display:flex;align-items:center;justify-content:space-between;gap:10px;}
+.tg-lifora-inline-sketch-heading {display:flex;align-items:center;gap:8px;min-width:0;flex-wrap:wrap;}
+.tg-lifora-inline-sketch-heading>svg,.tg-lifora-inline-sketch-heading>span:first-child svg {width:17px;height:17px;}
+.tg-lifora-inline-sketch-heading strong {color:var(--text-normal);font-size:.9rem;}
+.tg-lifora-inline-sketch-heading>span:last-child {font-size:.7rem;color:var(--text-muted);}
+.tg-lifora-sketch-close {display:grid;place-items:center;width:30px;height:30px;border:1px solid var(--background-modifier-border);border-radius:7px;background:var(--background-secondary);color:var(--text-normal);}
+.tg-lifora-sketch-close svg {width:16px;height:16px;}
+.tg-lifora-sketch-tools {display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.tg-lifora-sketch-tool {display:grid;place-items:center;min-width:34px;height:34px;padding:6px;border:1px solid var(--background-modifier-border);border-radius:8px;background:var(--background-secondary);color:var(--text-muted);cursor:pointer;}
+.tg-lifora-sketch-tool.is-active {border-color:var(--interactive-accent);color:var(--text-accent);background:color-mix(in srgb,var(--interactive-accent) 14%,var(--background-primary));}
+.tg-lifora-sketch-tool svg {width:18px;height:18px;}
+.tg-lifora-sketch-color {width:38px;height:34px;padding:2px;border:1px solid var(--background-modifier-border);border-radius:8px;background:var(--background-secondary);}
+.tg-lifora-sketch-weight {height:34px;max-width:92px;border:1px solid var(--background-modifier-border);border-radius:8px;background:var(--background-primary);color:var(--text-normal);font-size:.75rem;}
+.tg-lifora-sketch-text {height:34px;min-width:120px;max-width:190px;border:1px solid var(--background-modifier-border);border-radius:8px;background:var(--background-primary);color:var(--text-normal);padding:5px 8px;font-size:.8rem;}
+.tg-lifora-sketch-canvas {width:100%;min-width:0;border:1px solid var(--background-modifier-border);border-radius:9px;background:#fff;overflow:hidden;}
+.tg-lifora-sketch-canvas svg {display:block;width:100%;height:auto;aspect-ratio:960/420;min-height:170px;touch-action:none;user-select:none;cursor:crosshair;}
+.tg-lifora-sketch-footer {display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:8px;}
+.tg-lifora-sketch-footnote {flex:1;min-width:150px;color:var(--text-muted);font-size:.7rem;}
+.tg-lifora-sketch-secondary,.tg-lifora-sketch-save {border-radius:8px;padding:9px 12px;min-height:36px;font-weight:600;font-size:.78rem;cursor:pointer;}
+.tg-lifora-sketch-secondary {border:1px solid var(--background-modifier-border);background:var(--background-secondary);color:var(--text-normal);}
+.tg-lifora-sketch-save {border:1px solid var(--interactive-accent);background:var(--interactive-accent);color:var(--text-on-accent);}
+@media (max-width:600px) {
+  .tg-lifora-inline-sketch {padding:8px;gap:8px;}
+  .tg-lifora-sketch-footnote {flex:1 1 100%;}
+  .tg-lifora-drawing-action {min-height:63px;padding:9px;}
+  .tg-lifora-inline-sketch-heading>span:last-child {display:none;}
+  .tg-lifora-sketch-canvas svg {min-height:140px;}
+}
+
+
+/* LIFORA v2.10.3: do not silently clip any Writing Studio tools. */
+.tg-editor-toolbar {
+  flex-wrap: wrap !important;
+  align-items: flex-start;
+  overflow: visible !important;
+  height: auto;
+}
+.tg-editor-toolbar-main {
+  flex: 1 1 100% !important;
+  order: 3;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap !important;
+  align-content: flex-start;
+  overflow: visible !important;
+  row-gap: 6px;
+  column-gap: 6px;
+  padding: 3px 0;
+}
+.tg-editor-toolbar-spacer { order: 0; flex: 1 1 auto; }
+.tg-editor-toolbar-meta { order: 1; }
+.tg-editor-toolbar-collapse { order: 2; margin-inline-start: auto; }
+.tg-editor-tool-group { flex-wrap: wrap; min-width: 0; }
+.tg-editor-toolbar-separator { display: none; }
+.tg-editor-toolbar:not(.is-collapsed) .tg-editor-tool-group {
+  background: color-mix(in srgb,var(--background-primary) 45%,transparent);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 9px;
+  padding: 3px;
+}
+.tg-editor-toolbar.is-collapsed { min-height: 38px; }
+.tg-editor-toolbar.is-collapsed .tg-editor-toolbar-main { display: none !important; }
+.tg-editor-toolbar.is-collapsed .tg-editor-toolbar-meta { display: none !important; }
+@media (max-width: 700px) {
+  .tg-editor-toolbar { gap: 4px; }
+  .tg-editor-tool-group { gap: 4px; }
+  .tg-editor-tool-button { min-width: 32px; min-height: 32px; }
+  .tg-editor-toolbar-main { row-gap: 5px; }
+}
+/* Local-first dependency status panel. */
+.tg-lifora-plugin-setup { width: min(650px, 96vw); }
+.tg-lifora-plugin-setup-desc { color: var(--text-muted); font-size:.82rem; line-height: 1.6; }
+.tg-lifora-plugin-setup-items { display: grid; gap: 9px; padding: 9px 0 16px; }
+.tg-lifora-plugin-setup-item { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; padding: 11px 13px; background: var(--background-secondary); border: 1px solid var(--background-modifier-border); border-radius: 10px; }
+.tg-lifora-plugin-setup-copy { display: grid; gap: 4px; flex: 1 1 160px; min-width: 0; }
+.tg-lifora-plugin-setup-copy>span { font-size:.75rem; color: var(--text-muted); }
+.tg-lifora-plugin-setup-head { display: flex; flex-wrap: wrap; gap: 9px; align-items: center; }
+.tg-lifora-plugin-setup-head strong { color: var(--text-normal); }
+.tg-lifora-plugin-setup-status { color: var(--text-accent); font-size: .7rem; }
+.tg-lifora-plugin-setup-link { text-decoration: none!important; min-width: 78px; text-align:center; }
+
+/* LIFORA v2.10.4 — integrated drawing tools, Canvas and image resizing */
+.tg-lifora-drawing-action-modal{width:min(640px,96vw);max-height:80vh;overflow-y:auto;}
+.modal.tg-lifora-drawing-action-dialog { width: min(760px, calc(100vw - 28px)) !important; max-width: min(760px, calc(100vw - 28px)) !important; }
+.tg-lifora-drawing-action-modal { width: 100% !important; min-width: 0; box-sizing: border-box; }
+.tg-lifora-drawing-action-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
+.tg-lifora-drawing-menu-section{grid-column:1/-1;font-size:.69rem;letter-spacing:.11em;font-weight:800;color:var(--text-accent);padding:8px 2px 2px;}
+.tg-lifora-drawing-action{min-height:66px;padding:9px;gap:9px;}
+.tg-lifora-drawing-action-icon{width:34px;height:34px;}
+.tg-lifora-drawing-action-text strong{font-size:.79rem;}
+.tg-lifora-drawing-action-text>span{font-size:.68rem;}
+.tg-lifora-drawing-action-text>span { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; white-space: normal; overflow-wrap: anywhere; }
+.tg-lifora-drawing-action { min-height: 88px; align-items: flex-start; }
+.tg-editor-plugin-shortcut{border-color:color-mix(in srgb,var(--interactive-accent) 40%,var(--background-modifier-border))!important;}
+.tg-lifora-integration-modal{width:min(580px,96vw);max-height:80vh;overflow-y:auto;}
+.tg-lifora-integration-modal .tg-lifora-drawing-action-grid{display:grid;grid-template-columns:1fr;}
+.modal.tg-canvas-picker-dialog { width: min(720px, calc(100vw - 28px)) !important; max-width: min(720px, calc(100vw - 28px)) !important; }
+.tg-canvas-picker-modal { width: 100% !important; min-width: 0 !important; max-width: 100% !important; box-sizing: border-box; }
+.tg-canvas-picker-intro { margin: 0 0 14px; color: var(--text-muted); font-size: .82rem; }
+.tg-canvas-picker-search { display: flex; align-items: center; gap: 8px; margin: 0 0 12px; padding: 8px 11px; border: 1px solid var(--background-modifier-border); border-radius: 11px; background: var(--background-primary); }
+.tg-canvas-picker-search svg { width: 17px; height: 17px; color: var(--text-muted); flex: 0 0 auto; }
+.tg-canvas-picker-search input { width: 100%; min-width: 0; border: 0 !important; outline: 0 !important; background: transparent !important; box-shadow: none !important; color: var(--text-normal); }
+.tg-canvas-picker-list { display: grid; gap: 8px; max-height: 52vh; overflow-y: auto; padding: 2px; }
+.tg-lifora-canvas-choice{display:block;width:100%;padding:12px;border:1px solid var(--background-modifier-border);border-radius:10px;text-align:start;background:var(--background-secondary);color:var(--text-normal);overflow-wrap:anywhere;}
+.tg-lifora-canvas-choice { display: flex; align-items: center; gap: 11px; min-width: 0; text-align: start; transition: transform .16s ease, border-color .16s ease, background .16s ease; }
+.tg-lifora-canvas-choice:hover { transform: translateY(-1px); border-color: var(--interactive-accent); background: var(--background-secondary-alt); }
+.tg-canvas-picker-icon { display: grid; place-items: center; flex: 0 0 38px; width: 38px; height: 38px; border-radius: 11px; color: var(--interactive-accent); background: color-mix(in srgb, var(--interactive-accent) 13%, var(--background-primary)); }
+.tg-canvas-picker-icon svg { width: 20px; height: 20px; }
+.tg-canvas-picker-copy { display: grid; gap: 3px; flex: 1 1 auto; min-width: 0; }
+.tg-canvas-picker-copy strong, .tg-canvas-picker-copy span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tg-canvas-picker-copy strong { font-size: .82rem; }
+.tg-canvas-picker-copy span { color: var(--text-muted); font-size: .7rem; }
+.tg-canvas-picker-arrow { display: inline-flex; color: var(--text-faint); flex: 0 0 auto; }
+.tg-canvas-picker-arrow svg { width: 16px; height: 16px; }
+.tg-canvas-picker-empty { display: grid; justify-items: center; gap: 7px; padding: 30px 16px; border: 1px dashed var(--background-modifier-border); border-radius: 14px; color: var(--text-muted); text-align: center; }
+.tg-canvas-picker-empty svg { width: 30px; height: 30px; color: var(--interactive-accent); }
+.tg-canvas-picker-empty strong { color: var(--text-normal); }
+.tg-lifora-resize-modal{width:min(780px,96vw);}
+.tg-lifora-drag-preview{overflow-x:auto;width:100%;padding:15px;background:var(--background-secondary);border:1px solid var(--background-modifier-border);border-radius:12px;}
+.tg-lifora-drag-image-wrap{position:relative;min-width:140px;max-width:none;display:inline-block;border:1px dashed var(--interactive-accent);border-radius:6px;vertical-align:top;}
+.tg-lifora-drag-preview-img{display:block;width:100%;height:auto;max-width:none;user-select:none;pointer-events:none;}
+.tg-lifora-drag-fallback{padding:20px;color:var(--text-muted);overflow-wrap:anywhere;}
+.tg-lifora-drag-handle{position:absolute;bottom:-14px;right:-14px;width:31px;height:31px;display:grid;place-items:center;border:2px solid var(--background-primary);border-radius:9px;background:var(--interactive-accent);color:var(--text-on-accent);touch-action:none;cursor:nwse-resize;}
+.tg-lifora-drag-handle svg{width:17px;height:17px;}
+@media(max-width:600px){.tg-lifora-drawing-action-grid{grid-template-columns:1fr;}.tg-lifora-drawing-action-modal{max-height:85vh;}.tg-lifora-drag-image-wrap{max-width:none;}}
+@media(max-width:600px){.modal.tg-lifora-drawing-action-dialog{width:calc(100vw - 20px)!important;max-width:calc(100vw - 20px)!important;}}
+@media(max-width:600px){.modal.tg-canvas-picker-dialog{width:calc(100vw - 20px)!important;max-width:calc(100vw - 20px)!important;}.tg-canvas-picker-list{max-height:60vh;}}
+
+/* LIFORA v2.10.4: image resizing directly in Live Preview / note view */
+.tg-lifora-image-drag-grip {
+  position: fixed;
+  z-index: 101;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 5px;
+  border: 2px solid var(--background-primary);
+  border-radius: 10px;
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  cursor: nwse-resize;
+  touch-action: none;
+  box-shadow: 0 3px 10px rgba(0,0,0,.28);
+}
+.tg-lifora-image-drag-grip svg {width:18px;height:18px;}
+
+
+/* LIFORA v2.10.5: a real group and a searchable command list per Community Plugin. */
+.tg-editor-plugins-group {border-style:dashed!important; gap:4px; flex:1 1 auto;}
+.tg-editor-plugins-caption {font-size:10px;font-weight:800;letter-spacing:.08em;color:var(--text-muted);align-self:center;padding:0 5px;}
+.tg-editor-dynamic-plugin.is-plugin-disabled {opacity:.6;}
+.tg-lifora-plugin-commands-modal {width:min(610px,96vw);max-height:86vh;overflow-y:auto;}
+.tg-lifora-plugin-commands-head {display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.tg-lifora-plugin-commands-head h2 {margin:0;}
+.tg-lifora-plugin-commands-icon {width:39px;height:39px;display:grid;place-items:center;color:var(--text-accent);background:var(--background-secondary);border-radius:11px;flex:none;}
+.tg-lifora-plugin-commands-icon svg {width:23px;height:23px;}
+.tg-lifora-plugin-command-search {display:flex;align-items:center;gap:8px;border:1px solid var(--background-modifier-border);background:var(--background-primary);padding:9px 12px;border-radius:10px;margin:12px 0;}
+.tg-lifora-plugin-command-search svg {width:17px;height:17px;color:var(--text-muted);flex:none;}
+.tg-lifora-plugin-command-search input,.tg-lifora-native-command-search {width:100%;color:var(--text-normal);background:transparent;border:none;outline:none;min-height:25px;}
+.tg-lifora-plugin-commands-list,.tg-lifora-native-command-list {display:grid;gap:5px;max-height:48vh;overflow-y:auto;scrollbar-width:thin;margin:9px 0;}
+.tg-lifora-plugin-command {display:flex;align-items:center;gap:9px;text-align:start;border:1px solid var(--background-modifier-border);border-radius:9px;min-height:41px;padding:9px 10px;background:var(--background-secondary);color:var(--text-normal);cursor:pointer;width:100%;}
+.tg-lifora-plugin-command:hover,.tg-lifora-plugin-command:focus-visible {border-color:var(--interactive-accent);background:var(--background-modifier-hover);}
+.tg-lifora-plugin-command-icon {display:grid;place-items:center;flex:none;color:var(--text-accent);width:24px;height:24px;}
+.tg-lifora-plugin-command-icon svg {width:17px;height:17px;}
+.tg-lifora-plugin-command>div {display:grid;gap:3px;min-width:0;overflow-wrap:anywhere;}
+.tg-lifora-plugin-command strong {font-size:.8rem;}
+.tg-lifora-plugin-command small {font-size:.65rem;color:var(--text-muted);}
+.tg-lifora-native-command-search {box-sizing:border-box;border:1px solid var(--background-modifier-border);background:var(--background-primary);padding:10px 12px;border-radius:9px;margin-top:13px;}
+.tg-lifora-plugin-setup-others {display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:7px;}
+.tg-lifora-plugin-setup-other {display:flex;align-items:center;gap:6px;padding:8px;border:1px solid var(--background-modifier-border);border-radius:8px;font-size:.76rem;min-width:0;}
+.tg-lifora-plugin-setup-other span:nth-child(2){flex:1;min-width:0;overflow-wrap:anywhere;}
+.tg-lifora-plugin-setup-other svg{width:16px;height:16px;flex:none;}
+.tg-lifora-plugin-setup-other small{color:var(--text-muted);font-size:.65rem;}
+@media(max-width:600px){.tg-lifora-plugin-commands-list,.tg-lifora-native-command-list{max-height:42vh}.tg-editor-plugins-group{flex:1 1 100%;}}
+
+/* Shared Premium treatment for every plugin feature window. */
+.tg-lifora-plugin-commands-modal { padding: 22px 24px 20px; }
+.tg-lifora-plugin-commands-head { padding-bottom: 4px; border-bottom: 1px solid var(--background-modifier-border); }
+.tg-lifora-plugin-command-search { box-shadow: inset 0 1px 0 rgba(255,255,255,.04); }
+.tg-lifora-plugin-command { min-height: 52px; gap: 11px; padding: 9px 12px; border-radius: 12px; box-shadow: inset 0 1px 0 rgba(255,255,255,.035); transition: transform .16s ease, border-color .16s ease, background .16s ease, box-shadow .16s ease; }
+.tg-lifora-plugin-command:hover, .tg-lifora-plugin-command:focus-visible { transform: translateY(-1px); box-shadow: 0 6px 16px color-mix(in srgb, var(--interactive-accent) 12%, transparent); }
+.tg-lifora-plugin-command-icon { width: 30px; height: 30px; border: 1px solid color-mix(in srgb, var(--interactive-accent) 28%, var(--background-modifier-border)); border-radius: 9px; background: color-mix(in srgb, var(--interactive-accent) 10%, var(--background-primary)); }
+.tg-lifora-plugin-command-icon svg { width: 16px; height: 16px; }
+.tg-lifora-plugin-command > div { flex: 1 1 auto; text-align: start; }
+.tg-lifora-plugin-command strong { font-size: .82rem; line-height: 1.3; overflow-wrap: anywhere; }
+.tg-lifora-plugin-command small { line-height: 1.3; overflow-wrap: anywhere; }
+
+/* v2.10.6: native dependency setup, no desktop-only installer required. */
+.tg-lifora-plugin-setup-policy {border:1px solid var(--background-modifier-border);border-radius:12px;padding:12px;margin-top:10px;background:var(--background-secondary);}
+.tg-lifora-auto-install-toggle {display:flex;align-items:center;gap:9px;font-size:.85rem;font-weight:700;color:var(--text-normal);cursor:pointer;}
+.tg-lifora-auto-install-toggle input {accent-color:var(--interactive-accent);width:18px;height:18px;}
+.tg-lifora-auto-install-results {display:grid;gap:5px;font-size:.73rem;color:var(--text-muted);max-height:160px;overflow-y:auto;}
+.tg-lifora-auto-install-results div {overflow-wrap:anywhere;}
+
+
+/* LIFORA v2.10.7 — focused note toolbar and overflow-safe plugin dialogs. */
+/* Obsidian's modal content already has horizontal padding; forcing it to 610px
+   caused left-side clipping and a horizontal scrollbar on several themes. */
+.modal.tg-lifora-plugin-commands-dialog,
+.modal.tg-lifora-integration-dialog {
+  width: min(760px, calc(100vw - 28px)) !important;
+  max-width: min(760px, calc(100vw - 28px)) !important;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.tg-lifora-plugin-commands-modal,
+.tg-lifora-integration-modal {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+  overflow-x: hidden !important;
+  overflow-y: auto;
+  direction: ltr;
+  text-align: left;
+}
+.tg-lifora-plugin-commands-modal > *,
+.tg-lifora-integration-modal > * {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+}
+.tg-lifora-plugin-commands-head h2 {min-width:0; overflow-wrap:anywhere;}
+.tg-lifora-plugin-command-search input { min-width:0; max-width:100%; }
+.tg-lifora-plugin-command { max-width:100%; min-width:0; box-sizing:border-box; }
+.tg-lifora-feature-hub .tg-lifora-drawing-action { min-height: 82px; align-items: flex-start; }
+.tg-lifora-feature-hub .tg-lifora-drawing-action-text { white-space: normal !important; overflow-wrap: anywhere !important; word-break: break-word; }
+.tg-lifora-feature-hub .tg-lifora-drawing-action-text strong,
+.tg-lifora-feature-hub .tg-lifora-drawing-action-text > span { white-space: normal !important; overflow-wrap: anywhere !important; }
+.tg-lifora-feature-hub .tg-lifora-drawing-action-text > span { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+.tg-lifora-plugin-commands-modal .tg-editor-modal-actions {flex-wrap:wrap; justify-content:flex-end; }
+@media (max-width: 600px) {
+  .modal.tg-lifora-plugin-commands-dialog,
+  .modal.tg-lifora-integration-dialog { width:calc(100vw - 20px); max-width:calc(100vw - 20px); }
+  .tg-lifora-plugin-commands-modal,
+  .tg-lifora-integration-modal { max-height:75dvh; }
+}
+
+/* LIFORA v2.10.8: actionable plugin feature hub for Markdown notes. */
+.tg-lifora-feature-hub{width:100%!important;max-width:100%!important;min-width:0;box-sizing:border-box;}
+.tg-lifora-note-feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px;}
+.tg-lifora-feature-subhead{font-size:.95rem;margin:16px 0 5px;color:var(--text-normal);}
+.tg-lifora-feature-hub .tg-lifora-drawing-action{min-width:0;max-width:100%;box-sizing:border-box;}
+.tg-lifora-feature-hub .tg-lifora-drawing-action{min-height:84px;align-items:flex-start;}
+.tg-lifora-feature-hub .tg-lifora-drawing-action-text{min-width:0;overflow-wrap:anywhere;}
+.tg-lifora-feature-hub .tg-lifora-drawing-action-text strong{white-space:normal;overflow-wrap:anywhere;}
+.tg-lifora-feature-hub .tg-lifora-drawing-action-text>span{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;}
+.tg-lifora-feature-hub .tg-lifora-plugin-commands-list{max-height:35vh;}
+@media(max-width:600px){.tg-lifora-note-feature-grid{grid-template-columns:1fr!important;}}

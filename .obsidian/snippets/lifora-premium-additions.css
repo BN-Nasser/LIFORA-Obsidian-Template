@@ -1,0 +1,133 @@
+/* ==========================================================================
+   LIFORA PREMIUM ADDITIONS — v1.2.0
+   Additive styling only. Existing weekday banners and themes are untouched.
+   ========================================================================== */
+:root {
+  --tg-gold: #d3ad59;
+  --tg-course: #65a8dc;
+  --tg-daily: #d3ad59;
+  --tg-weekly: #7e91dc;
+  --tg-monthly: #a78bd2;
+  --tg-quarterly: #bd86c7;
+  --tg-yearly: #d58fa2;
+  --tg-notes: #55aaa3;
+  --tg-surface: color-mix(in srgb, var(--background-secondary) 88%, var(--background-primary));
+  --tg-border: color-mix(in srgb, var(--text-muted) 22%, transparent);
+}
+
+/* Dashboard and hub typography */
+.timegarden-home h2,
+.timegarden-courses h2,
+.timegarden-journal-home h2,
+.timegarden-reviews-home h2 {
+  margin-top: 1.7em;
+  padding-bottom: .35em;
+  border-bottom: 1px solid var(--tg-border);
+  letter-spacing: .01em;
+}
+
+.timegarden-home table,
+.timegarden-courses table,
+.timegarden-journal-home table,
+.timegarden-reviews-home table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border: 1px solid var(--tg-border);
+  border-radius: 12px;
+}
+
+.timegarden-home th,
+.timegarden-courses th,
+.timegarden-journal-home th,
+.timegarden-reviews-home th {
+  background: color-mix(in srgb, var(--interactive-accent) 10%, var(--background-secondary));
+}
+
+.timegarden-home td,
+.timegarden-home th,
+.timegarden-courses td,
+.timegarden-courses th,
+.timegarden-journal-home td,
+.timegarden-journal-home th,
+.timegarden-reviews-home td,
+.timegarden-reviews-home th {
+  padding: 10px 12px;
+}
+
+/* Elegant callouts */
+.timegarden-home .callout,
+.timegarden-courses .callout,
+.timegarden-journal-home .callout,
+.timegarden-reviews-home .callout {
+  border: 1px solid var(--tg-border);
+  border-radius: 14px;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, .06);
+}
+
+.timegarden-courses .callout[data-callout="abstract"] {
+  --callout-color: 101, 168, 220;
+}
+.timegarden-journal-home .callout[data-callout="tip"] {
+  --callout-color: 211, 173, 89;
+}
+
+/* Course dashboard */
+.timegarden-course h1 {
+  color: var(--tg-course);
+  letter-spacing: -.02em;
+}
+.timegarden-course h2 {
+  padding-bottom: .3em;
+  border-bottom: 1px solid var(--tg-border);
+}
+.timegarden-course .metadata-container {
+  border: 1px solid var(--tg-border);
+  border-radius: 12px;
+  padding: 10px 14px;
+  background: var(--tg-surface);
+}
+
+/* Daily template additions use the existing weekday variables. */
+.timegarden-daily h3 {
+  scroll-margin-top: 24px;
+}
+.timegarden-daily table {
+  border: 1px solid color-mix(in srgb, var(--primary) 35%, transparent);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.timegarden-daily th {
+  background: color-mix(in srgb, var(--primary) 18%, var(--background-secondary));
+}
+.timegarden-daily td,
+.timegarden-daily th {
+  padding: 9px 11px;
+}
+
+/* File Explorer: top-level LIFORA sections. Iconic supplies individual
+   per-folder icon colors; these rules also tint folder names consistently. */
+.nav-folder-title[data-path="00 Dashboard"] { color: #45b99b; }
+.nav-folder-title[data-path="Journal/01 Daily"] { color: var(--tg-daily); }
+.nav-folder-title[data-path="Journal/02 Weekly"] { color: var(--tg-weekly); }
+.nav-folder-title[data-path="03 Monthly"] { color: var(--tg-monthly); }
+.nav-folder-title[data-path="04 Quarterly"] { color: var(--tg-quarterly); }
+.nav-folder-title[data-path="05 Yearly"] { color: var(--tg-yearly); }
+.nav-folder-title[data-path="06 Templates"] { color: #929ba7; }
+.nav-folder-title[data-path="07 Notes"] { color: var(--tg-notes); }
+.nav-folder-title[data-path="08 Courses"] { color: var(--tg-course); }
+.nav-folder-title[data-path^="08 Courses/"] {
+  font-weight: 600;
+}
+.nav-folder-title[data-path="08 Courses/01 In Progress"] { color: #4cae86; }
+.nav-folder-title[data-path="08 Courses/02 Planned"] { color: #65a8dc; }
+.nav-folder-title[data-path="08 Courses/03 Completed"] { color: #9a86c8; }
+.nav-folder-title[data-path="08 Courses/04 Course Resources"] { color: #4eaaa5; }
+.nav-folder-title[data-path="08 Courses/05 Course Archive"] { color: #8b929c; }
+
+/* Subtle hover/focus states; do not recolor the whole Explorer. */
+.nav-folder-title[data-path^="08 Courses/"]:hover {
+  background: color-mix(in srgb, var(--tg-course) 9%, transparent);
+  border-radius: 7px;
+}

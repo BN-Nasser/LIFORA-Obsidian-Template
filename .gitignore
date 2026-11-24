@@ -1,0 +1,44 @@
+# Personal vault data
+/data/
+/Journal/
+/Attachments/
+/07 Notes/*
+!/07 Notes/Knowledge Home.md
+/08 Courses/*
+!/08 Courses/Courses Home.md
+/09 Books/*
+!/09 Books/Books Home.md
+/10 Quran/*
+!/10 Quran/Quran Home.md
+/11 Languages/*
+!/11 Languages/Languages Home.md
+/12 Goals/Goals/
+/13 Daily Planner/*
+!/13 Daily Planner/Daily Planner.md
+/TaskNotes/*.md
+
+# Obsidian local state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/plugins/*/data.json
+.obsidian/plugins/*/data/
+.obsidian/.obsidian
+
+# User-created files
+*.canvas
+*.excalidraw.md
+*.excalidraw
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.mp4
+*.mp3
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*.swp

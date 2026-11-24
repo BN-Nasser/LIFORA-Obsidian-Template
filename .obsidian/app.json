@@ -1,0 +1,17 @@
+{
+  "propertiesInDocument": "visible",
+  "rightToLeft": false,
+  "alwaysUpdateLinks": true,
+  "showInlineTitle": true,
+  "showLineNumber": false,
+  "spellcheck": false,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "07 Notes",
+  "promptDelete": false,
+  "livePreview": true,
+  "attachmentFolderPath": "00 Dashboard/Attachments",
+  "settingsPopoutWindow": false,
+  "userIgnoreFilters": [
+    "data"
+  ]
+}

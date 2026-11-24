@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 112" fill="none">
+  <g transform="translate(4 30) scale(1.05)">
+    <path d="M37.7 17.1a16.2 16.2 0 1 0 2.1 9.4" stroke="#C5A66A" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M17.2 11.8v24.4h16.1" stroke="#E9D9B8" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M36.8 7.8v6.4M33.6 11h6.4" stroke="#E9D9B8" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+  <text x="74" y="82" fill="#F0EBDD" font-family="Inter, Segoe UI, sans-serif" font-size="72" font-weight="650" letter-spacing="9">LIFORA</text>
+</svg>

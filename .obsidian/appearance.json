@@ -1,0 +1,21 @@
+{
+  "theme": "obsidian",
+  "enabledCssSnippets": [
+    "lifora-daily-note-themes",
+    "lifora-misc-styles",
+    "lifora-monthly-note-themes",
+    "lifora-quarterly-note-themes",
+    "lifora-yearly-note-themes",
+    "lifora-weekly-note-themes",
+    "lifora-tweaks",
+    "lifora-colored-sidebar",
+    "lifora-hide-inline-title",
+    "lifora-hide-visible-frontmatter",
+    "lifora-premium-additions",
+    "lifora-dashboard-ui"
+  ],
+  "baseFontSize": 24,
+  "cssTheme": "LIFORA",
+  "accentColor": "#C5A66A",
+  "showRibbon": true
+}
