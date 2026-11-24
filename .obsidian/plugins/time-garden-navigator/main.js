@@ -7378,6 +7378,7 @@ module.exports = class TimeGardenNavigator extends Plugin {
   }
 
   renderGlobalDailyHeader(parent, sectionPath = "", bannerSourcePath = "") {
+    parent.querySelectorAll?.(":scope > .tg-global-day-header").forEach(existing => existing.remove());
     const viewRoot = parent.closest?.(".markdown-preview-view, .markdown-source-view, .markdown-reading-view");
     if (viewRoot) {
       viewRoot.classList.add("tg-dashboard-wide-view");
