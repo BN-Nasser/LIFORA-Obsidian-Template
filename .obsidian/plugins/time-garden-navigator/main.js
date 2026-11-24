@@ -2692,6 +2692,59 @@ class TimeGardenPersonalizationModal extends Modal {
     this.sectionList = sectionGroup.createDiv({ cls: "tg-personalization-section-list" });
     this.renderSections();
 
+    const bannerGroup = contentEl.createDiv({ cls: "tg-personalization-group tg-section-banner-group" });
+    bannerGroup.createEl("h3", { text: "Section banners" });
+    bannerGroup.createEl("p", {
+      text: "Choose a fixed banner or rotate several images. Put one vault image path per line.",
+      cls: "tg-course-modal-description"
+    });
+
+    const bannerList = bannerGroup.createDiv({ cls: "tg-personalization-banner-list" });
+    const orderedSections = this.settings.sectionOrder
+      .map(path => HOME_SECTION_CONFIG.find(item => item.folder === path))
+      .filter(Boolean);
+
+    orderedSections.forEach(section => {
+      const saved = this.settings.sectionBanners[section.folder] || {};
+      const row = bannerList.createDiv({ cls: "tg-personalization-banner-row" });
+      row.createEl("strong", { text: section.title });
+
+      const mode = row.createEl("select", { cls: "tg-personalization-banner-mode" });
+      [["static", "Fixed image"], ["daily", "Change every day"], ["weekly", "Change every week"], ["interval", "Custom interval"]]
+        .forEach(([value, label]) => mode.createEl("option", { text: label, attr: { value } }));
+      mode.value = ["static", "daily", "weekly", "interval"].includes(saved.mode) ? saved.mode : "daily";
+
+      const images = row.createEl("textarea", {
+        cls: "tg-personalization-banner-images",
+        attr: { rows: "3", placeholder: "06 Templates/Images/Weekly Notes/WeeklyBanner1.gif\n06 Templates/Images/Weekly Notes/WeeklyBanner2.gif" }
+      });
+      images.value = (Array.isArray(saved.images) ? saved.images : []).join("\n");
+
+      const interval = row.createEl("input", {
+        cls: "tg-personalization-banner-interval",
+        type: "number",
+        attr: { min: "1", max: "8760", title: "Change interval in hours" }
+      });
+      interval.value = String(Math.max(1, Number(saved.intervalHours) || 24));
+      interval.disabled = mode.value !== "interval";
+
+      const updateSaved = () => {
+        this.settings.sectionBanners[section.folder] = {
+          mode: mode.value,
+          intervalHours: Math.max(1, Number(interval.value) || 24),
+          anchor: Number(saved.anchor) || Date.UTC(2026, 0, 1),
+          images: images.value.split(/\r?\n/).map(path => path.trim()).filter(Boolean)
+        };
+      };
+      mode.addEventListener("change", () => {
+        interval.disabled = mode.value !== "interval";
+        updateSaved();
+      });
+      interval.addEventListener("input", updateSaved);
+      images.addEventListener("input", updateSaved);
+      updateSaved();
+    });
+
     const footer = contentEl.createDiv({ cls: "tg-course-modal-actions" });
     const cancel = footer.createEl("button", { text: "Cancel", cls: "tg-course-btn tg-course-btn-muted" });
     cancel.addEventListener("click", () => this.close());
@@ -6611,7 +6664,16 @@ module.exports = class TimeGardenNavigator extends Plugin {
       widgetOrder: ["daily", "stats", "sections", "recent", "quickActions"],
       sectionOrder: HOME_SECTION_CONFIG.map(section => section.folder),
       visibleSections: HOME_SECTION_CONFIG.map(section => section.folder),
-      sectionColors: {}
+      sectionColors: {},
+      sectionBanners: {
+        "07 Notes": { mode: "daily", intervalHours: 24, anchor: Date.UTC(2026, 0, 1), images: ["06 Templates/Images/Weekly Notes/WeeklyBanner1.gif", "06 Templates/Images/Weekly Notes/WeeklyBanner2.gif", "06 Templates/Images/Weekly Notes/WeeklyBanner3.gif", "06 Templates/Images/Weekly Notes/WeeklyBanner4.gif"] },
+        "08 Courses": { mode: "daily", intervalHours: 24, anchor: Date.UTC(2026, 0, 1), images: ["06 Templates/Images/Monthly Notes/MonthlyBanner1.gif", "06 Templates/Images/Monthly Notes/MonthlyBanner2.gif", "06 Templates/Images/Monthly Notes/MonthlyBanner3.gif", "06 Templates/Images/Monthly Notes/MonthlyBanner4.gif"] },
+        "09 Books": { mode: "daily", intervalHours: 24, anchor: Date.UTC(2026, 0, 1), images: ["06 Templates/Images/Monthly Notes/MonthlyBanner2.gif", "06 Templates/Images/Monthly Notes/MonthlyBanner3.gif", "06 Templates/Images/Monthly Notes/MonthlyBanner1.gif", "06 Templates/Images/Monthly Notes/MonthlyBanner4.gif"] },
+        "10 Quran": { mode: "daily", intervalHours: 24, anchor: Date.UTC(2026, 0, 1), images: ["06 Templates/Images/Quarterly Notes/QuarterlyBanner1.gif", "06 Templates/Images/Quarterly Notes/QuarterlyBanner2.gif", "06 Templates/Images/Quarterly Notes/QuarterlyBanner3.gif", "06 Templates/Images/Quarterly Notes/QuarterlyBanner4.gif"] },
+        "11 Languages": { mode: "daily", intervalHours: 24, anchor: Date.UTC(2026, 0, 1), images: ["06 Templates/Images/Quarterly Notes/QuarterlyBanner3.gif", "06 Templates/Images/Quarterly Notes/QuarterlyBanner4.gif", "06 Templates/Images/Quarterly Notes/QuarterlyBanner1.gif", "06 Templates/Images/Quarterly Notes/QuarterlyBanner2.gif"] },
+        "12 Goals": { mode: "daily", intervalHours: 24, anchor: Date.UTC(2026, 0, 1), images: ["06 Templates/Images/Weekly Notes/WeeklyBanner4.gif", "06 Templates/Images/Weekly Notes/WeeklyBanner3.gif", "06 Templates/Images/Weekly Notes/WeeklyBanner2.gif", "06 Templates/Images/Weekly Notes/WeeklyBanner1.gif"] },
+        "13 Daily Planner": { mode: "daily", intervalHours: 24, anchor: Date.UTC(2026, 0, 1), images: ["06 Templates/Images/Monthly Notes/MonthlyBanner4.gif", "06 Templates/Images/Monthly Notes/MonthlyBanner3.gif", "06 Templates/Images/Monthly Notes/MonthlyBanner2.gif", "06 Templates/Images/Monthly Notes/MonthlyBanner1.gif"] }
+      }
     };
     const validFolders = new Set(HOME_SECTION_CONFIG.map(section => section.folder));
     return {
@@ -6628,7 +6690,10 @@ module.exports = class TimeGardenNavigator extends Plugin {
       visibleSections: savedVisible
         ? savedVisible.filter(path => validFolders.has(path))
         : defaults.visibleSections,
-      sectionColors: savedColors
+      sectionColors: savedColors,
+      sectionBanners: saved.sectionBanners && typeof saved.sectionBanners === "object"
+        ? { ...defaults.sectionBanners, ...saved.sectionBanners }
+        : defaults.sectionBanners
     };
   }
 
@@ -6639,11 +6704,13 @@ module.exports = class TimeGardenNavigator extends Plugin {
       widgetOrder: Array.isArray(preferences.widgetOrder) ? preferences.widgetOrder : ["daily", "stats", "sections", "recent", "quickActions"],
       sectionOrder: Array.isArray(preferences.sectionOrder) ? preferences.sectionOrder : HOME_SECTION_CONFIG.map(section => section.folder),
       visibleSections: Array.isArray(preferences.visibleSections) ? preferences.visibleSections : HOME_SECTION_CONFIG.map(section => section.folder),
-      sectionColors: preferences.sectionColors && typeof preferences.sectionColors === "object" ? preferences.sectionColors : {}
+      sectionColors: preferences.sectionColors && typeof preferences.sectionColors === "object" ? preferences.sectionColors : {},
+      sectionBanners: preferences.sectionBanners && typeof preferences.sectionBanners === "object" ? preferences.sectionBanners : {}
     };
     await this.saveData(data);
     this.workspacePrefsCache = await this.getWorkspacePreferences();
     this.applyExplorerPresentation();
+    this.refreshGlobalDailyHeaders(true);
     await this.refreshHomeDashboard();
   }
 
@@ -7058,6 +7125,24 @@ module.exports = class TimeGardenNavigator extends Plugin {
 
   getSectionBannerSource(sectionPath = "", bannerSourcePath = "", date = new Date()) {
     if (sectionPath) {
+      const bannerPrefs = this.workspacePrefsCache?.sectionBanners?.[sectionPath] || {};
+      const selectedImages = Array.isArray(bannerPrefs.images) ? bannerPrefs.images.filter(Boolean) : [];
+      if (selectedImages.length) {
+        let selected = selectedImages[0];
+        if (bannerPrefs.mode !== "static") {
+          const intervalHours = bannerPrefs.mode === "daily"
+            ? 24
+            : bannerPrefs.mode === "weekly"
+              ? 168
+              : Math.max(1, Number(bannerPrefs.intervalHours) || 24);
+          const anchor = Number(bannerPrefs.anchor) || Date.UTC(2026, 0, 1);
+          const elapsed = Math.max(0, date.getTime() - anchor);
+          const position = Math.floor(elapsed / (intervalHours * 60 * 60 * 1000));
+          selected = selectedImages[position % selectedImages.length];
+        }
+        const source = this.resolveBannerSource(selected, bannerSourcePath);
+        if (source) return { ...source, frontmatter: {}, file: source.file };
+      }
       const config = SECTION_CONFIG.find(item => item.folder === sectionPath);
       const weeklyBanners = [
         "06 Templates/Images/Weekly Notes/WeeklyBanner1.gif",
