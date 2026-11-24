@@ -1,6 +1,6 @@
-# LIFORA
+# LIFORA Obsidian Template
 
-> A premium, visual productivity vault for Obsidian.
+> A premium, visual productivity vault template for Obsidian.
 
 ![LIFORA dashboard](06%20Templates/Images/DashboardBanner.gif)
 
