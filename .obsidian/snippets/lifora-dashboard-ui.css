@@ -5785,6 +5785,14 @@
 @media(max-width:520px){.tg-goals-app{padding:12px 8px}.tg-goals-overview{gap:8px}.tg-goals-stat{min-height:94px;padding:12px}.tg-goals-toolbar{flex-direction:column}.tg-goals-grid{grid-template-columns:1fr}}
 @media(max-width:760px){.modal:has(.tg-goal-form-modal),.modal:has(.tg-course-progress-modal){width:94vw;max-width:94vw}.tg-goal-form-modal{max-width:none}}
 
+/* Section banners and Goals: image-only mastheads, with no repeated date UI or extra gaps. */
+.tg-goals-app .tg-global-day-header-content,
+.tg-goals-app > .tg-global-day-header-content,
+body:has(.tg-goals-app) .tg-global-day-header-content{display:none!important}
+.tg-goals-app{padding-top:0!important}
+.tg-goals-app>.tg-global-day-header{min-height:220px!important;max-height:220px!important;margin-bottom:14px!important}
+.tg-goals-app .tg-goals-hero{margin-top:0!important}
+
 
 /* LIFORA v2.9.2 — Data Protection Center */
 .tg-backup-auto-panel {

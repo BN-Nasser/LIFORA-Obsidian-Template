@@ -7056,7 +7056,45 @@ module.exports = class TimeGardenNavigator extends Plugin {
     return { note: note || null, cover: null, frontmatter: {} };
   }
 
-  getSectionBannerSource(sectionPath = "", bannerSourcePath = "") {
+  getSectionBannerSource(sectionPath = "", bannerSourcePath = "", date = new Date()) {
+    if (sectionPath) {
+      const config = SECTION_CONFIG.find(item => item.folder === sectionPath);
+      const weeklyBanners = [
+        "06 Templates/Images/Weekly Notes/WeeklyBanner1.gif",
+        "06 Templates/Images/Weekly Notes/WeeklyBanner2.gif",
+        "06 Templates/Images/Weekly Notes/WeeklyBanner3.gif",
+        "06 Templates/Images/Weekly Notes/WeeklyBanner4.gif"
+      ];
+      const monthlyBanners = [
+        "06 Templates/Images/Monthly Notes/MonthlyBanner1.gif",
+        "06 Templates/Images/Monthly Notes/MonthlyBanner2.gif",
+        "06 Templates/Images/Monthly Notes/MonthlyBanner3.gif",
+        "06 Templates/Images/Monthly Notes/MonthlyBanner4.gif"
+      ];
+      const quarterlyBanners = [
+        "06 Templates/Images/Quarterly Notes/QuarterlyBanner1.gif",
+        "06 Templates/Images/Quarterly Notes/QuarterlyBanner2.gif",
+        "06 Templates/Images/Quarterly Notes/QuarterlyBanner3.gif",
+        "06 Templates/Images/Quarterly Notes/QuarterlyBanner4.gif"
+      ];
+      const families = {
+        "07 Notes": weeklyBanners,
+        "08 Courses": monthlyBanners,
+        "09 Books": quarterlyBanners,
+        "10 Quran": quarterlyBanners,
+        "11 Languages": weeklyBanners,
+        "12 Goals": weeklyBanners,
+        "13 Daily Planner": monthlyBanners,
+        [DAILY_ROOT]: weeklyBanners,
+        [WEEKLY_ROOT]: monthlyBanners
+      };
+      const family = families[sectionPath] || weeklyBanners;
+      const offset = { "07 Notes": 0, "08 Courses": 1, "09 Books": 2, "10 Quran": 3, "11 Languages": 1, "12 Goals": 3, "13 Daily Planner": 2, [DAILY_ROOT]: 0, [WEEKLY_ROOT]: 1 }[sectionPath] || 0;
+      const selected = family[(date.getDay() + offset) % family.length];
+      const source = this.resolveBannerSource(selected, config?.dashboard || bannerSourcePath);
+      if (source) return { ...source, frontmatter: {}, file: source.file };
+    }
+
     const candidates = [];
     if (bannerSourcePath) candidates.push(bannerSourcePath);
     if (sectionPath) {
@@ -7156,7 +7194,7 @@ module.exports = class TimeGardenNavigator extends Plugin {
     const identity = this.getDailyIdentityCover(date);
     const dailyNote = identity.note;
     const dailyFrontmatter = identity.frontmatter || {};
-    const sectionBanner = this.getSectionBannerSource(sectionPath, bannerSourcePath);
+    const sectionBanner = this.getSectionBannerSource(sectionPath, bannerSourcePath, date);
     const selectedBanner = sectionBanner || {
       file: identity.cover instanceof TFile ? identity.cover : null,
       url: typeof identity.cover === "string" && /^https?:\/\//i.test(identity.cover) ? identity.cover : "",
@@ -7230,7 +7268,7 @@ module.exports = class TimeGardenNavigator extends Plugin {
     const content = header.createDiv({ cls: "tg-global-day-header-content" });
 
     if (sectionPath) {
-      content.style.display = "none";
+      content.style.setProperty("display", "none", "important");
     } else {
       const context = content.createDiv({ cls: "tg-global-day-header-context" });
       this.createLiforaSymbol(context, "tg-lifora-context-symbol");
